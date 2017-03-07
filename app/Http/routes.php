@@ -17,9 +17,18 @@ Route::get('home', 'HomeController@index');
 Route::get('cat/add',['as'=>'cat.add','uses'=>'CategorieController@create'] );
 Route::post('cat/create',['as'=>'cat.create','uses'=>'CategorieController@store'] );
 Route::get('cat/',['as'=>'cat.index','uses'=>'CategorieController@index'] );
-Route::get('cat/delete/{id_categorie}',['as'=>'cat.delete','uses'=>'CategorieController@destroy'] );
-Route::get('cat/edit/{id_categorie}',['as'=>'cat.edit','uses'=>'CategorieController@edit'] );
+Route::get('cat/delete/{id_categorie}/{id}',['as'=>'cat.delete','uses'=>'CategorieController@destroy'] );
+Route::get('cat/edit/{id_categorie}/{id}',['as'=>'cat.edit','uses'=>'CategorieController@edit'] );
 Route::put('cat/update/{id_categorie}',['as'=>'cat.update','uses'=>'CategorieController@update']);
+
+//produit routes
+
+Route::get('produit/',['as'=>'produit.index','uses'=>'ProduitController@index'] );
+Route::get('produit/add',['as'=>'produit.add','uses'=>'ProduitController@create'] );
+Route::post('produit/create',['as'=>'produit.create','uses'=>'ProduitController@store'] );
+Route::get('produit/delete/{id_produit}/{id_caisse}',['as'=>'produit.delete','uses'=>'ProduitController@destroy'] );
+Route::get('produit/edit/{id_produit}/{id_caisse}',['as'=>'produit.edit','uses'=>'ProduitController@edit'] );
+Route::put('produit/update/{id_produit}',['as'=>'produit.update','uses'=>'ProduitController@update']);
 
 
 Route::controllers([

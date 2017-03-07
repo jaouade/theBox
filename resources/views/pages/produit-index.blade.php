@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="ui container">
-    <a href="{{route('cat.add')}}">
-        <div class="ui left floated small green labeled icon button" >
-            <i class="add icon"></i> Ajouter
+        <a href="{{route('produit.add')}}">
+            <div class="ui left floated small green labeled icon button" >
+                <i class="add icon"></i> Ajouter
 
-        </div>
-    </a>
+            </div>
+        </a>
     </div>
 
     <table class="ui inverted blue table">
@@ -20,26 +20,26 @@
         </tr>
         </thead>
         <tbody>
-        @forelse($categories as $category)
+        @forelse($produits as $produit)
             <tr>
-                <td> <img src="{{  '../../images/'.$category->image_cat}}" class="ui mini rounded image"></td>
-                <td>{{$category->last_update}}</td>
-                <td>{{$category->description_cat}}</td>
+                <td> <img src="{{  '../../images/produit/'.$produit->image}}" class="ui mini rounded image"></td>
+                <td>{{$produit->last_update}}</td>
+                <td>{{$produit->description}}</td>
                 <td>
-                    @if($category->visible==1)
+                    @if($produit->visible==1)
                         Oui
                     @else
                         Non
                     @endif
                 </td>
                 <td>
-                    <a href="{{route('cat.edit',[$category->id_categorie,$category->id_caisse])}}">
-                    <div class="ui right floated small black labeled icon button" >
-                        <i class="edit icon "></i>
+                    <a href="{{route('produit.edit',[$produit->id_produit,$produit->id_caisse])}}">
+                        <div class="ui right floated small black labeled icon button" >
+                            <i class="edit icon"></i>
 
-                    </div>
+                        </div>
                     </a>
-                    <a href="{{route('cat.delete',[$category->id_categorie,$category->id_caisse])}}">
+                    <a href="{{route('produit.delete',[$produit->id_produit,$produit->id_caisse])}}">
                         <div class="ui right floated small red labeled icon button" >
                             <i class="trash icon"></i>
 

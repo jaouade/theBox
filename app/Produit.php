@@ -34,7 +34,9 @@ class Produit extends Model
 
 	protected $fillable = [
 		'designation',
+        'id_produit' ,
 		'description',
+        'id_caisse',
 		'id_cat',
 		'image',
 		'visible',

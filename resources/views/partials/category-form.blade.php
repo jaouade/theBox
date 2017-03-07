@@ -1,3 +1,5 @@
+
+
 <?php
 if ($category->id_categorie!=0){
     $options =["method"=>"PUT",'url'=>route('cat.update',$category->id_categorie),'files'=>true];
@@ -22,8 +24,8 @@ if ($category->id_categorie!=0){
         {!! Form::textarea('description_cat' )!!}
     </div>
     <div class="field">
-        {!! Form::label('id_caisse','id caisse') !!}
-        {!! Form::input('number','id_caisse') !!}
+        {!! Form::label('id_caisse','la caisse') !!}
+        {!! Form::select('id_caisse',App\Caisse::lists('id_caisse_table','id_caisse'),null,['class'=>'form-control']) !!}
     </div>
     <div class="field">
         {!! Form::label('color_cat','color cat') !!}
