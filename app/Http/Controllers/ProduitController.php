@@ -108,7 +108,7 @@ class ProduitController extends Controller {
             $last_update =Carbon::now();
             if ($request->file('image')){
                 $imageName =$request->id_produit.'.' . $request->file('image')->getClientOriginalExtension();
-                $request->file('image')->move(base_path() . '/public/produit/images/', $imageName);
+                $request->file('image')->move(base_path() . '/public/images/produit/', $imageName);
                 DB::statement("update Produit set designation ='".$request->designation."', description ='".$request->description."', image ='".$imageName."', visible ='".$request->visible."',color ='".$request->color."', last_update = '".$last_update->toDateString()."', id_caisse ='".$request->id_caisse."'  where  id_produit='".$id_produit."'");
                 $produit= Produit::where('id_produit',$id_produit)->get()->first();
                 return view('pages.add-produit',compact('produit'));
@@ -118,7 +118,7 @@ class ProduitController extends Controller {
             return view('pages.add-produit',compact('produit'));
         }
         $produit= Produit::where('id_produit',$id_produit)->get()->first();
-        return view('pages.add-produit',compact('produit'));
+        return view('pages.add-produit',compact('produit'))->withErrors(['this is not good']);
 
 
 

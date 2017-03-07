@@ -31,6 +31,15 @@ Route::get('produit/edit/{id_produit}/{id_caisse}',['as'=>'produit.edit','uses'=
 Route::put('produit/update/{id_produit}',['as'=>'produit.update','uses'=>'ProduitController@update']);
 
 
+//Caisse routes
+
+Route::get('produit/',['as'=>'produit.index','uses'=>'ProduitController@index'] );
+Route::get('produit/add',['as'=>'produit.add','uses'=>'ProduitController@create'] );
+Route::post('produit/create',['as'=>'produit.create','uses'=>'ProduitController@store'] );
+Route::get('produit/delete/{id_produit}/{id_caisse}',['as'=>'produit.delete','uses'=>'ProduitController@destroy'] );
+Route::get('produit/edit/{id_produit}/{id_caisse}',['as'=>'produit.edit','uses'=>'ProduitController@edit'] );
+Route::put('produit/update/{id_produit}',['as'=>'produit.update','uses'=>'ProduitController@update']);
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
