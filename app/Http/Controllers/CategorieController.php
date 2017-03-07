@@ -110,7 +110,7 @@ class CategorieController extends Controller {
                 $imageName =$request->id_categorie.'.' . $request->file('image_cat')->getClientOriginalExtension();
                 $request->file('image_cat')->move(base_path() . '/public/images/', $imageName);
                 DB::statement("update Categorie set designation_cat ='".$request->designation_cat."', description_cat ='".$request->description_cat."', image_cat ='".$imageName."', visible ='".$request->visible."',color_cat ='".$request->color_cat."', last_update = '".$last_update->toDateString()."', id_caisse ='".$request->id_caisse."'  where  id_categorie='".$id_categorie."'");
-
+                
             }
             DB::statement("update Categorie set designation_cat ='".$request->designation_cat."', description_cat ='".$request->description_cat."', visible ='".$request->visible."',color_cat ='".$request->color_cat."', last_update = '".$last_update->toDateString()."', id_caisse ='".$request->id_caisse."'  where  id_categorie='".$id_categorie."'");
             $category= Categorie::where('id_categorie',$id_categorie)->get()->first();

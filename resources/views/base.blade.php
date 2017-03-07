@@ -1,53 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('/css/semantic/semantic.min.css') }}" rel="stylesheet">
-    <title>lacaisse</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+
+    <title>lacaisse.ma | BackOffice</title>
+    <link rel="stylesheet" href="{{ asset('/assets/css/vendors.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/fonts/icomoon.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/fonts/flag-icon-css/css/flag-icon.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/plugins/forms/icheck/icheck.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/plugins/sliders/slick/slick.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/plugins/forms/icheck/custom.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/plugins/charts/morris.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/plugins/extensions/unslider.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/app.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/components/weather-icons/climacons.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}"/>
 </head>
-<body>
-<div class="container ui">
-<div class="ui secondary pointing menu">
-    <a class="active green item">
-        Ventes
-    </a>
-    <a class="item green">
-        Clients
-    </a>
-    <a class="item green">
-        Stocks
-    </a>
-    <a class="item green">
-        Catalogue
-    </a>
-    <a class="item green">
-        Categories
-    </a>
-    <div class="right menu ">
-        <div class="item">
-            <div class="ui icon input">
-                <input type="text" placeholder="Search...">
-                <i class="search link icon"></i>
-            </div>
+<body data-open="hover" data-menu="horizontal-top-icon-menu" data-col="2-columns" class="horizontal-layout horizontal-top-icon-menu 2-columns ">
+
+@include('partials.menu')
+
+<div class="robust-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="content-header row">
         </div>
-        <a class="ui item red active">
-            Logout
-        </a>
+        <div class="content-body">
+            @yield('content')
+        </div>
     </div>
 </div>
-    @yield('content')
-</div>
 
-<script  src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="{{ asset('/css/semantic/semantic.min.js') }}"></script>
-<script >
-    $('select.dropdown')
-        .dropdown()
-    ;
-</script>
-@yield('js')
+
+
+@include('partials.footer')
+
+<!-- BEGIN VENDOR JS-->
+<script src="{{ asset('/assets/js/vendors.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/js/plugins/ui/jquery.sticky.js') }}" type="text/javascript"></script>
+
+
+<!-- BEGIN VENDOR JS-->
+<!-- BEGIN PAGE VENDOR JS-->
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN ROBUST JS-->
+<script src="{{ asset('/assets/js/app.min.js') }}" type="text/javascript"></script>
+
 </body>
+
 </html>

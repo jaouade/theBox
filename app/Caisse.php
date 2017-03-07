@@ -22,8 +22,9 @@ class Caisse extends Model
 	protected $table = 'Caisse';
 	public $incrementing = false;
 	public $timestamps = false;
+    protected $primaryKey = ['id_caisse_table','id_caisse'];
 
-	protected $casts = [
+    protected $casts = [
 		'id_caisse_table' => 'int',
 		'montant_ouverture' => 'float',
 		'id_serveur' => 'int',
@@ -32,8 +33,10 @@ class Caisse extends Model
 	];
 
 	protected $fillable = [
+        'id_caisse',
 		'date_ouverture',
 		'montant_ouverture',
+        'id_caisse_table',
 		'id_serveur',
 		'date_fermeture',
 		'montant_fermeture',
