@@ -90,7 +90,7 @@ class ClientController extends Controller {
         if($client!=null){
             return view('pages.add-client',compact('client'));
         }
-        return response()->view('pages.add-produit',compact('produit'))->withErrors(["nous avons pas pu trouver la page que vous cherchez !! :( "]);
+        return response()->view('pages.add-client',compact('client'))->withErrors(["nous avons pas pu trouver la page que vous cherchez !! :( "]);
 
 
     }
@@ -101,9 +101,10 @@ class ClientController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id_client,$id_caisse,Request $request)
+	public function update(Request $request,$id_client,$id_caisse)
 	{
-	    $inputs = $request->all();
+	    $inputs = $request->only(['nom_client','email_client','tel_client']);
+	   //dd($inputs);
         if (!$this-> OneFieldIsEmpty($inputs)){
 
             $last_update = Carbon::now();

@@ -1,35 +1,27 @@
-
-
 <?php
-if ($client->id_client!=0){
-    $options =["method"=>"PUT",'url'=>route('client.update',$client->id_client),'files'=>true];
+if ($client->id_client!=null){
+    $options =["method"=>"PUT",'url'=>route('client.update',[$client->id_client,$client->id_caisse]),'files'=>true];
 }else{
     $options =["method"=>"POST",'url'=>route('client.create'),'files'=>true];
 }
 ?>
 
 
-    {!! Form::model($client,$options)  !!}
-<div class="form-body">
+{!! Form::model($client,$options)  !!}
+<div class="modal-body">
 
-    <div class="form-group col-xs-12 mb-2">
+    <fieldset class="form-group floating-label-form-group">
         {!! Form::text('nom_client',null,['class'=>'form-control border-primary','placeholder'=>'nom']) !!}
-    </div>
-    <div class="form-group col-xs-12 mb-2">
+    </fieldset>
+    <fieldset class="form-group floating-label-form-group">
         {!! Form::text('email_client',null,['class'=>'form-control border-primary','placeholder'=>'email']) !!}
-    </div>
-    <div class="form-group col-xs-12 mb-2">
+    </fieldset>
+    <fieldset class="form-group floating-label-form-group">
         {!! Form::text('tel_client',null,['class'=>'form-control border-primary' ,'placeholder'=>'telephone']) !!}
+    </fieldset>
+
+    <div class="modal-footer">
+        <input type="submit" class="btn btn-outline-primary " value="mettre à jour">
     </div>
-
-
-    <div class="form-actions center">
-
-        <button type="submit" class="btn btn-primary">
-            <i class="icon-check2"></i> Save
-        </button>
-    </div>
-</div>
-    {!! Form::close()!!}
-
+{!! Form::close()!!}
 

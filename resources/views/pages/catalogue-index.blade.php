@@ -123,7 +123,7 @@
 
 
 
-    @include('partials.produit-form-modal')
-    @include('partials.category-form-modal')
+    @include('partials.modals.produit-form-modal')
+    @include('partials.modals.category-form-modal')
 
 @endsection

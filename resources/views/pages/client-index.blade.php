@@ -28,14 +28,14 @@
 
 
                         </tr>
-                        <?php $client->id_client=null;?>
+                        <?php $client=null;?>
                     @endforeach
                     </tbody>
 
                 </table>
 
 
-    @include('partials.client-form-modal')
+    @include('partials.modals.client-form-modal')
 
 
 

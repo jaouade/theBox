@@ -17,9 +17,9 @@ Route::get('home', 'HomeController@index');
 Route::get('cat/add',['as'=>'cat.add','uses'=>'CategorieController@create'] );
 Route::post('cat/create',['as'=>'cat.create','uses'=>'CategorieController@store'] );
 Route::get('cat/',['as'=>'cat.index','uses'=>'CategorieController@index'] );
-Route::get('cat/delete/{id_categorie}/{id}',['as'=>'cat.delete','uses'=>'CategorieController@destroy'] );
-Route::get('cat/edit/{id_categorie}/{id}',['as'=>'cat.edit','uses'=>'CategorieController@edit'] );
-Route::put('cat/update/{id_categorie}',['as'=>'cat.update','uses'=>'CategorieController@update']);
+Route::get('cat/delete/{id_categorie}/{id_caisse}',['as'=>'cat.delete','uses'=>'CategorieController@destroy'] );
+Route::get('cat/edit/{id_categorie}/{id_caisse}',['as'=>'cat.edit','uses'=>'CategorieController@edit'] );
+Route::put('cat/update/{id_categorie}/{id_caisse}',['as'=>'cat.update','uses'=>'CategorieController@update']);
 
 //produit routes
 //
@@ -33,12 +33,12 @@ Route::put('cat/update/{id_categorie}',['as'=>'cat.update','uses'=>'CategorieCon
 
 //Client routes
 
-Route::get('client/',['as'=>'client.index','uses'=>'ClientController@index'] );
-Route::get('client/add',['as'=>'client.add','uses'=>'ClientController@create'] );
-Route::post('client/create',['as'=>'client.create','uses'=>'ClientController@store'] );
-Route::get('client/delete/{id_client}/{id_caisse}',['as'=>'client.delete','uses'=>'ClientController@destroy'] );
-Route::get('client/edit/{id_client}/{id_caisse}',['as'=>'client.edit','uses'=>'ClientController@edit'] );
-Route::put('client/update/{id}',['as'=>'client.update','uses'=>'ClientController@update']);
+Route::get('clients/',['as'=>'client.index','uses'=>'ClientController@index'] );
+Route::get('clients/add',['as'=>'client.add','uses'=>'ClientController@create'] );
+Route::post('clients/create',['as'=>'client.create','uses'=>'ClientController@store'] );
+Route::get('clients/delete/{id_client}/{id_caisse}',['as'=>'client.delete','uses'=>'ClientController@destroy'] );
+Route::get('clients/edit/{id_client}/{id_caisse}',['as'=>'client.edit','uses'=>'ClientController@edit'] );
+Route::put('clients/update/{id_client}/{id_caisse}',['as'=>'client.update','uses'=>'ClientController@update']);
 
 //Client routes
 

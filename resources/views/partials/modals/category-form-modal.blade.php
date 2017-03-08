@@ -12,7 +12,7 @@
             </div>
 
             <?php
-            if ($category->id_produit!=null){
+            if ($category->id_categorie!=null){
                 $options =["method"=>"PUT",'url'=>route('cat.update',$category->id_categorie),'files'=>true];
             }else{
                 $options =["method"=>"POST",'url'=>route('cat.create'),'files'=>true];
@@ -24,13 +24,16 @@
             <div class="modal-body">
 
                 <fieldset class="form-group floating-label-form-group">
-                    {!! Form::text('nom_client',null,['class'=>'form-control border-primary','placeholder'=>'nom']) !!}
+                    {!! Form::text('designation_cat',null,['class'=>'form-control border-primary','placeholder'=>'designation']) !!}
+                </fieldset>
+                <fieldset class="form-group floating-label-form-group">
+                    {!! Form::text('description_cat',null,['class'=>'form-control border-primary','placeholder'=>'description']) !!}
                 </fieldset>
                <fieldset class="form-group floating-label-form-group">
-                    {!! Form::text('email_client',null,['class'=>'form-control border-primary','placeholder'=>'email']) !!}
+                    {!! Form::file('image_cat',null,['class'=>' custom-file-control','placeholder'=>'image']) !!}
                </fieldset>
                  <fieldset class="form-group floating-label-form-group">
-                    {!! Form::text('tel_client',null,['class'=>'form-control border-primary' ,'placeholder'=>'telephone']) !!}
+                    {!! Form::text('color_cat',null,['class'=>'form-control border-primary' ,'placeholder'=>'color']) !!}
                 </fieldset>
 
 

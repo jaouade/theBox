@@ -12,8 +12,8 @@
             </div>
 
             <?php
-            if ($client->id_client!=null){
-                $options =["method"=>"PUT",'url'=>route('client.update',$client->id_client),'files'=>true];
+            if ($client!=null){
+                $options =["method"=>"PUT",'url'=>route('client.update',[$client->id_client,$client->id_caisse]),'files'=>true];
             }else{
                 $options =["method"=>"POST",'url'=>route('client.create'),'files'=>true];
             }
@@ -33,11 +33,6 @@
                     {!! Form::text('tel_client',null,['class'=>'form-control border-primary' ,'placeholder'=>'telephone']) !!}
                 </fieldset>
 
-
-
-
-
-
                 <div class="modal-footer">
                     <input type="reset" class="btn btn-outline-secondary " data-dismiss="modal" value="annuler">
                     <input type="submit" class="btn btn-outline-primary " value="ajouter">
@@ -45,5 +40,6 @@
             {!! Form::close()!!}
 
         </div>
+    </div>
     </div>
 </div>
