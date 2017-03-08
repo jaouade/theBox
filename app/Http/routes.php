@@ -22,13 +22,13 @@ Route::get('cat/edit/{id_categorie}/{id}',['as'=>'cat.edit','uses'=>'CategorieCo
 Route::put('cat/update/{id_categorie}',['as'=>'cat.update','uses'=>'CategorieController@update']);
 
 //produit routes
-
-Route::get('produit/',['as'=>'produit.index','uses'=>'ProduitController@index'] );
-Route::get('produit/add',['as'=>'produit.add','uses'=>'ProduitController@create'] );
-Route::post('produit/create',['as'=>'produit.create','uses'=>'ProduitController@store'] );
-Route::get('produit/delete/{id_produit}/{id_caisse}',['as'=>'produit.delete','uses'=>'ProduitController@destroy'] );
-Route::get('produit/edit/{id_produit}/{id_caisse}',['as'=>'produit.edit','uses'=>'ProduitController@edit'] );
-Route::put('produit/update/{id_produit}',['as'=>'produit.update','uses'=>'ProduitController@update']);
+//
+//Route::get('produit/',['as'=>'produit.index','uses'=>'ProduitController@index'] );
+//Route::get('produit/add',['as'=>'produit.add','uses'=>'ProduitController@create'] );
+//Route::post('produit/create',['as'=>'produit.create','uses'=>'ProduitController@store'] );
+//Route::get('produit/delete/{id_produit}/{id_caisse}',['as'=>'produit.delete','uses'=>'ProduitController@destroy'] );
+//Route::get('produit/edit/{id_produit}/{id_caisse}',['as'=>'produit.edit','uses'=>'ProduitController@edit'] );
+//Route::put('produit/update/{id_produit}',['as'=>'produit.update','uses'=>'ProduitController@update']);
 
 
 //Client routes
@@ -39,6 +39,20 @@ Route::post('client/create',['as'=>'client.create','uses'=>'ClientController@sto
 Route::get('client/delete/{id_client}/{id_caisse}',['as'=>'client.delete','uses'=>'ClientController@destroy'] );
 Route::get('client/edit/{id_client}/{id_caisse}',['as'=>'client.edit','uses'=>'ClientController@edit'] );
 Route::put('client/update/{id}',['as'=>'client.update','uses'=>'ClientController@update']);
+
+//Client routes
+
+Route::get('catalogue/',['as'=>'catalogue.index','uses'=>'ProduitController@catalogue'] );
+
+//Produit routes
+
+Route::get('produit/',['as'=>'produit.index','uses'=>'ProduitController@index'] );
+Route::get('produit/add',['as'=>'produit.add','uses'=>'ProduitController@create'] );
+Route::post('produit/create',['as'=>'produit.create','uses'=>'ProduitController@store'] );
+Route::get('produit/delete/{id_produit}/{id_caisse}',['as'=>'produit.delete','uses'=>'ProduitController@destroy'] );
+Route::get('produit/edit/{id_produit}/{id_caisse}',['as'=>'produit.edit','uses'=>'ProduitController@edit'] );
+Route::put('produit/update/{id_produit}/{id_caisse}',['as'=>'produit.update','uses'=>'ProduitController@update']);
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

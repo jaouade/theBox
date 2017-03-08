@@ -18,7 +18,10 @@
     <link rel="stylesheet" href="{{ asset('/assets/css/app.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/assets/css/components/weather-icons/climacons.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/plugins/tables/datatable/dataTables.bootstrap4.min.css') }}"/>
+
 </head>
+
 <body data-open="hover" data-menu="horizontal-top-icon-menu" data-col="2-columns" class="horizontal-layout horizontal-top-icon-menu 2-columns ">
 
 @include('partials.menu')
@@ -50,6 +53,7 @@
 <script src="{{ asset('/assets/js/plugins/tables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/assets/js/plugins/tables/datatable/dataTables.bootstrap4.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/assets/js/components/tables/datatables/datatable-advanced.js') }}" type="text/javascript"></script>
+
 </body>
 
 </html>
