@@ -12,7 +12,7 @@
             </div>
 
             <?php
-            if ($client->id_client!=0){
+            if ($client->id_client!=null){
                 $options =["method"=>"PUT",'url'=>route('client.update',$client->id_client),'files'=>true];
             }else{
                 $options =["method"=>"POST",'url'=>route('client.create'),'files'=>true];

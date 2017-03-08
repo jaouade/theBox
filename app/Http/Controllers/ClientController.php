@@ -20,7 +20,7 @@ class ClientController extends Controller {
 	public function index()
 	{
         $client = new Client();
-        $clients = Client::all();
+        $clients = Client::where('etat',1)->get()->all();
         return view('pages.client-index',compact('client','clients'));
 
 	}
@@ -75,7 +75,7 @@ class ClientController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+
 	}
 
 	/**
@@ -84,10 +84,16 @@ class ClientController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($id_client,$id_caisse)
 	{
+        $client= Client::where('id_client',$id_client)->where('id_caisse',$id_caisse)->get()->first();
+        if($client!=null){
+            return view('pages.add-client',compact('client'));
+        }
+        return response()->view('pages.add-produit',compact('produit'))->withErrors(["nous avons pas pu trouver la page que vous cherchez !! :( "]);
 
-	}
+
+    }
 
 	/**
 	 * Update the specified resource in storage.
@@ -95,9 +101,20 @@ class ClientController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id_client,$id_caisse,Request $request)
 	{
-		//
+	    $inputs = $request->all();
+        if (!$this-> OneFieldIsEmpty($inputs)){
+
+            $last_update = Carbon::now();
+            $inputs['last_update'] = $last_update->toDateString();
+            Client::where('id_client',$id_client)->where('id_caisse',$id_caisse)->update($inputs);
+            $clients = Client::all()->where('etat',1);
+            return Redirect::route('client.index')->with('clients',$clients);
+        }
+
+        return Redirect::back()->withErrors([$this->message]);
+
 	}
 
 	/**
@@ -106,10 +123,18 @@ class ClientController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($id_client,$id_caisse)
 	{
-		//
-	}
+        $client= Client::where('id_client',$id_client)->where('id_caisse',$id_caisse)->get()->first();
+        $inputs=$client['attributes'];
+        $inputs['etat'] = 0;
+        Client::where('id_client',$id_client)->where('id_caisse',$id_caisse)->update($inputs);
+
+        $clients = Client::all()->where('etat',1);
+        return Redirect::route('client.index');
+
+
+    }
 
     private function OneFieldIsEmpty($fields){
 

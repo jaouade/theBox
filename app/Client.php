@@ -21,6 +21,7 @@ class Client extends Model
 	protected $table = 'Client';
 	public $incrementing = false;
 	public $timestamps = false;
+	protected $primaryKey = ['id_client','id_caisse'];
 
 	protected $casts = [
 		'id_client' => 'int',

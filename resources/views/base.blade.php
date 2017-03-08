@@ -47,7 +47,9 @@
 <!-- END PAGE VENDOR JS-->
 <!-- BEGIN ROBUST JS-->
 <script src="{{ asset('/assets/js/app.min.js') }}" type="text/javascript"></script>
-
+<script src="{{ asset('/assets/js/plugins/tables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/js/plugins/tables/datatable/dataTables.bootstrap4.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/js/components/tables/datatables/datatable-advanced.js') }}" type="text/javascript"></script>
 </body>
 
 </html>

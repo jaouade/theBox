@@ -31,13 +31,13 @@ Route::get('produit/edit/{id_produit}/{id_caisse}',['as'=>'produit.edit','uses'=
 Route::put('produit/update/{id_produit}',['as'=>'produit.update','uses'=>'ProduitController@update']);
 
 
-//Caisse routes
+//Client routes
 
 Route::get('client/',['as'=>'client.index','uses'=>'ClientController@index'] );
 Route::get('client/add',['as'=>'client.add','uses'=>'ClientController@create'] );
 Route::post('client/create',['as'=>'client.create','uses'=>'ClientController@store'] );
-Route::get('client/delete/{id}',['as'=>'client.delete','uses'=>'ClientController@destroy'] );
-Route::get('client/edit/{id}',['as'=>'client.edit','uses'=>'ClientController@edit'] );
+Route::get('client/delete/{id_client}/{id_caisse}',['as'=>'client.delete','uses'=>'ClientController@destroy'] );
+Route::get('client/edit/{id_client}/{id_caisse}',['as'=>'client.edit','uses'=>'ClientController@edit'] );
 Route::put('client/update/{id}',['as'=>'client.update','uses'=>'ClientController@update']);
 
 Route::controllers([
