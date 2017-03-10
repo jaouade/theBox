@@ -13,6 +13,15 @@
 
 Route::get('/', 'WelcomeController@index');
 
+// login and account creation
+
+Route::get('account/create',['as'=>'account.create','uses'=>'connection\AccountCreationController@index']);
+Route::get('user/login',['as'=>'user.login','uses'=>'connection\LoginController@index']);
+Route::post('user/connecting',['as'=>'user.connect','uses'=>'connection\LoginController@login']);
+Route::get('/logout',['as'=>'user.logout','uses'=>'connection\LoginController@logout']);
+
+
+// categorie
 Route::get('home', 'HomeController@index');
 Route::get('cat/add',['as'=>'cat.add','uses'=>'CategorieController@create'] );
 Route::post('cat/create',['as'=>'cat.create','uses'=>'CategorieController@store'] );

@@ -12,11 +12,10 @@
             </div>
 
             <?php
-            if ($category->id_categorie!=null){
-                $options =["method"=>"PUT",'url'=>route('cat.update',$category->id_categorie),'files'=>true];
-            }else{
+
                 $options =["method"=>"POST",'url'=>route('cat.create'),'files'=>true];
-            }
+                $category = new \App\Categorie();
+
             ?>
 
 

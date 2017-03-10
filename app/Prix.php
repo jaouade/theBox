@@ -37,6 +37,9 @@ class Prix extends Model
 	protected $fillable = [
 		'id_produit',
 		'prix',
+        'id_prix',
+        'id_caisse',
+        'id_produit',
 		'tva',
 		'label',
 		'etat',

@@ -1,10 +1,12 @@
 <?php namespace App\Http\Controllers;
 
 use App\Categorie;
+use App\Produit;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class CategorieController extends Controller {
 
@@ -16,7 +18,7 @@ class CategorieController extends Controller {
      private $message ="";
 	public function index()
 	{
-        $categories = Categorie::all();
+        $categories = Categorie::where('visible',1)->get()->all();
         return view('pages.cat-index',compact('categories'));
 	}
 
@@ -43,20 +45,29 @@ class CategorieController extends Controller {
 	{
 
 
-	    $inputs = $request->only(['id_categorie', 'visible', 'id_caisse',
-            'designation_cat', 'description_cat',
-		'color_cat',
-		]);
+	    $inputs = $request->only(['designation_cat', 'description_cat', 'color_cat']);
 	    if (!$this-> OneFieldIsEmpty($inputs)){
-            $imageName =$request->id_categorie.'.' . $request->file('image_cat')->getClientOriginalExtension();
-            $request->file('image_cat')->move(base_path() . '/public/images/', $imageName);
-            $last_update = \Carbon\Carbon::now();
-            $inputs['last_update'] = $last_update->toDateString();
-            $inputs['image_cat']= $imageName;
+	        if($request->file('image_cat')!=null){
+                $imageName =md5(uniqid(rand(), true)).'.' . $request->file('image_cat')->getClientOriginalExtension();
+                $inputs['image_cat']= $imageName;
+                $request->file('image_cat')->move(base_path() . '/public/images/categorie/', $imageName);
 
+            }
+            $last_update = Carbon::now();
+            $inputs['last_update'] = $last_update->toDateString();
+            //dd(Categorie::all()->last()['attributes']['id_categorie']);
+            if(Categorie::all()->last()['attributes']['id_categorie']==null){
+                $inputs['id_categorie'] = 1;
+
+            }else{
+                $inputs['id_categorie'] = Categorie::all()->last()['attributes']['id_categorie']+1;
+            }
+            $inputs['id_caisse'] = Session::get('id');
+            $inputs['visible'] = 1;
             Categorie::create($inputs);
-            $categories = Categorie::all();
-            return Redirect::route('cat.index')->with('categories',$categories);
+            $categories = Categorie::where('visible',1)->get()->all();
+            $produits = Produit::where('visible',1)->get()->all();
+            return view('pages.catalogue-index',compact('produits','categories'));
         }
         $category= new Categorie();
         return Redirect::back()->withErrors([$this->message]);
@@ -88,9 +99,9 @@ class CategorieController extends Controller {
 	{
        $category= Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id)->get()->first();
         if($category!=null){
-            return view('pages.add-category',compact('category'));
+            return view('pages.update-category',compact('category'));
         }
-        return response()->view('pages.add-category',compact('category'))->withErrors(["nous avons pas pu trouver la page que vous cherchez !! :( "]);
+        return response()->view('pages.update-category',compact('category'))->withErrors(["nous avons pas pu trouver la page que vous cherchez !! :( "]);
 
 	}
 
@@ -100,21 +111,25 @@ class CategorieController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id_categorie,Request $request)
+	public function update($id_categorie,$id_caisse,Request $request)
 
 	{
-	    $fields=$request->only(['designation_cat','description_cat','color_cat','id_caisse']);
+	    $fields=$request->only(['designation_cat','description_cat','color_cat']);
 	    if(!$this->OneFieldIsEmpty($fields)){
             $last_update =Carbon::now();
             if ($request->file('image_cat')){
-                $imageName =$request->id_categorie.'.' . $request->file('image_cat')->getClientOriginalExtension();
-                $request->file('image_cat')->move(base_path() . '/public/images/', $imageName);
-                DB::statement("update Categorie set designation_cat ='".$request->designation_cat."', description_cat ='".$request->description_cat."', image_cat ='".$imageName."', visible ='".$request->visible."',color_cat ='".$request->color_cat."', last_update = '".$last_update->toDateString()."', id_caisse ='".$request->id_caisse."'  where  id_categorie='".$id_categorie."'");
-                
+
+                $imageName =Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->image_cat.'.' . $request->file('image_cat')->getClientOriginalExtension();
+                $request->file('image_cat')->move(base_path() . '/public/images/categorie/', $imageName);
+                $fields['image_cat'] = $imageName;
+                $fields ['last_update'] = $last_update;
+
+                Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->update($fields);
+
             }
-            DB::statement("update Categorie set designation_cat ='".$request->designation_cat."', description_cat ='".$request->description_cat."', visible ='".$request->visible."',color_cat ='".$request->color_cat."', last_update = '".$last_update->toDateString()."', id_caisse ='".$request->id_caisse."'  where  id_categorie='".$id_categorie."'");
-            $category= Categorie::where('id_categorie',$id_categorie)->get()->first();
-            return view('pages.add-category',compact('category'));
+            Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->update($fields);
+            $category= Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->get()->first();
+            return view('pages.update-category',compact('category'));
         }
         return Redirect::back()->withErrors([$this->message]);
 
@@ -128,19 +143,18 @@ class CategorieController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id_categorie,$id)
+	public function destroy($id_categorie,$id_caisse)
 	{
-		Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id)->delete();
+		$cat = Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->get()->first();
+        $inputs=$cat['attributes'];
+        $inputs['visible'] = 2;
+        Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->update($inputs);
 
-		return Redirect::route('cat.index');
+        return Redirect::route('catalogue.index');
 	}
 
 	private function OneFieldIsEmpty($fields){
-	    //dd($fields['id_caisse']);
-        if($fields['id_caisse']==null){
-            $this->message ="caisse input cannot be empty";
-            return true;
-        }
+
 	    foreach($fields as $field){
 
 	        if(strlen($field)==0  ){

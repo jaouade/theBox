@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
@@ -55,7 +56,7 @@ class ClientController extends Controller {
             $inputs['etat'] =1;
             $inputs['id_client'] = $client->id_client +1;
             Client::create($inputs);
-            $clients = Client::all();
+            $clients = Client::where('etat',1)->get()->all();
             return Redirect::route('client.index')->with('clients',$clients);
         }
 
@@ -88,9 +89,9 @@ class ClientController extends Controller {
 	{
         $client= Client::where('id_client',$id_client)->where('id_caisse',$id_caisse)->get()->first();
         if($client!=null){
-            return view('pages.add-client',compact('client'));
+            return view('pages.update-client',compact('client'));
         }
-        return response()->view('pages.add-client',compact('client'))->withErrors(["nous avons pas pu trouver la page que vous cherchez !! :( "]);
+        return response()->view('pages.update-client',compact('client'))->withErrors(["nous avons pas pu trouver la page que vous cherchez !! :( "]);
 
 
     }
@@ -126,6 +127,7 @@ class ClientController extends Controller {
 	 */
 	public function destroy($id_client,$id_caisse)
 	{
+
         $client= Client::where('id_client',$id_client)->where('id_caisse',$id_caisse)->get()->first();
         $inputs=$client['attributes'];
         $inputs['etat'] = 0;
