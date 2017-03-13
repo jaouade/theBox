@@ -18,19 +18,12 @@ class ProduitController extends Controller {
 	 *
 	 * @return Response
 	 */
-	private  $message = "";
-    public function catalogue()
-    {
-        $produits= Produit::where('visible',1)->get()->all();
-        $categories= Categorie::where('visible',1)->get()->all();
 
-        return view('pages.catalogue-index',compact('produits','categories'));
-    }
 	public function index()
 	{
         $produit = new Produit();
         $produits= Produit::where('visible',1)->get()->all();
-        return view('pages.catalogue-index',compact('produit','produits'));
+        return view('pages.produit-index',compact('produit','produits'));
 	}
 
 	/**
@@ -51,12 +44,18 @@ class ProduitController extends Controller {
 	public function store(Request $request)
 	{
 
+
         $inputs = $request->only(['designation', 'description', 'color','id_cat']);
         $prix_inputs = $request->only(['tva','label','prix','code_bar']);
+        $incr = count($prix_inputs['tva']);
 
        // dd($inputs);
-        if (!$this-> OneFieldIsEmpty($inputs) && !$this->OneFieldIsEmpty($prix_inputs)){
-            if($request->file('image')!=null){
+        $id_produit=Produit::max("id_produit");
+        if($id_produit==null) $id_produit=0;
+        $id_prix=Prix::max("id_prix");
+        if($id_prix==null) $id_prix=0;
+
+        if($request->file('image')!=null){
                 $imageName =md5(uniqid(rand(), true)).'.' . $request->file('image')->getClientOriginalExtension();
                 $request->file('image')->move(base_path() . '/public/images/produit/', $imageName);
                 $inputs['image']= $imageName;
@@ -65,25 +64,23 @@ class ProduitController extends Controller {
             $inputs['last_update'] = $last_update->toDateString();
 
             $inputs['id_caisse'] = Session::get('id');
-            $inputs['id_produit'] =  Produit::all()->last()->id_produit+1;
+            $inputs['id_produit'] =  ++$id_produit;
             $inputs['visible'] = 1;
             $prod = Produit::create($inputs);
             //pix inputs
-            $prix_inputs['id_produit'] =$prod->id_produit;
-            $prix_inputs['etat'] =1;
-            $prix_inputs['id_caisse'] =Session::get('id');
-            if(Prix::all()->last()['attributes']['id_prix']==null){
-                $prix_inputs['id_prix'] = 1;
-            }else{
-                $prix_inputs['id_prix'] = Prix::all()->last()['attributes']['id_prix']+1;
+            for($i=0;$i<$incr;$i++){
+                $prix['id_produit'] =$prod->id_produit;
+                $prix['etat'] =1;
+                $prix['last_update'] = $last_update->toDateString();
+                $prix['id_caisse'] =Session::get('id');
+                $prix['id_prix'] = ++$id_prix;
+                $prix['tva']=$prix_inputs['tva'][$i];
+                $prix['prix']=$prix_inputs['prix'][$i];
+                $prix['label']=$prix_inputs['label'][$i];
+                $prix['code_bar']=$prix_inputs['code_bar'][$i];
+                Prix::create($prix);
             }
-
-            Prix::create($prix_inputs);
-            $categories = Categorie::where('visible',1)->get()->all();
-            $produits = Produit::where('visible',1)->get()->all();
-            return view('pages.catalogue-index',compact('produits','categories'));
-        }
-        return Redirect::back()->with('produit_error',$this->message);
+            return Redirect::route('produit.index');
 	}
 
 	/**
@@ -103,8 +100,9 @@ class ProduitController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id_produit,$id_caisse)
+	public function edit($id_produit)
 	{
+	    $id_caisse = Session::get('id');
 	    $produit = Produit::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->get()->first();
 	    $prix = Prix::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->get()->first();
 
@@ -118,9 +116,27 @@ class ProduitController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id_produit,Request $request)
 	{
-		//
+
+	    $id_caisse = Session::get('id');
+	    $last_update = Carbon::now();
+	    $inputs = $request->only(['designation', 'description', 'color','id_cat']);
+        $prix_inputs = $request->only(['tva','label','prix','code_bar']);
+        if($request->file('image')!=null){
+            $imageName =md5(uniqid(rand(), true)).'.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(base_path() . '/public/images/produit/', $imageName);
+            $inputs['image']= $imageName;
+        }
+        $inputs['last_update'] = $last_update->toDateString();
+        $inputs['visible'] = 1;
+        Produit::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->update($inputs);
+        //pix inputs
+        $prix_inputs['etat'] =1;
+        $prix_inputs['last_update'] = $last_update->toDateString();
+        Prix::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->update($prix_inputs);
+        return Redirect::route('produit.index')->with(['success'=>'les modifications ont été enregistrés avec succé']);
+
 	}
 
 	/**
@@ -129,29 +145,19 @@ class ProduitController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id_produit,$id_caisse)
+	public function destroy($id_produit)
+
 	{
+	    $id_caisse = Session::get('id');
         $pro = Produit::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->get()->first();
         $inputs=$pro['attributes'];
         $inputs['visible'] = 2;
         Produit::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->update($inputs);
 
-        return Redirect::route('catalogue.index');
+        return Redirect::route('produit.index');
 
 	}
 
-    private function OneFieldIsEmpty($fields){
 
-        foreach($fields as $field){
-
-            if(strlen($field)==0  ){
-                $this->message ="veuillez remplir tous les champs avant de soumettre le formulaire";
-                return true;
-            }
-
-
-        }
-        return false;
-    }
 
 }

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class ClientController extends Controller {
 
@@ -44,28 +45,17 @@ class ClientController extends Controller {
 	 */
     public function store(Request $request)
     {
-
-
         $inputs = $request->all();
-        if (!$this-> OneFieldIsEmpty($inputs)){
-            $client = Client::all()->last();
-
-            $last_update = Carbon::now();
-            $inputs['last_update'] = $last_update->toDateString();
-            $inputs['date'] = $last_update->toDateString();
-            $inputs['etat'] =1;
-            $inputs['id_client'] = $client->id_client +1;
-            Client::create($inputs);
-            $clients = Client::where('etat',1)->get()->all();
-            return Redirect::route('client.index')->with('clients',$clients);
-        }
-
-        return Redirect::back()->withErrors([$this->message]);
-
-
-
-
-
+        $id=Client::max("id_client");
+        if($id==null) $id=0;
+        $last_update = Carbon::now();
+        $inputs['last_update'] = $last_update->toDateString();
+        $inputs['date'] = $last_update->toDateString();
+        $inputs['etat'] =1;
+        $inputs['id_client'] = ++$id;
+        $inputs['id_caisse'] = Session::get('id');
+        Client::create($inputs);
+        return Redirect::route('client.index')->with(['success'=>'le client a été bien ajouté']);
     }
 
 	/**
@@ -85,13 +75,15 @@ class ClientController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id_client,$id_caisse)
+	public function edit($id_client)
+
 	{
+	    $id_caisse = Session::get('id');
         $client= Client::where('id_client',$id_client)->where('id_caisse',$id_caisse)->get()->first();
         if($client!=null){
             return view('pages.update-client',compact('client'));
         }
-        return response()->view('pages.update-client',compact('client'))->withErrors(["nous avons pas pu trouver la page que vous cherchez !! :( "]);
+        return Redirect::back()->with(['error'=>'nous n\'avons pas pu completer l\'operation veuillez reéssayer plus tard ']);
 
 
     }
@@ -102,20 +94,16 @@ class ClientController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Request $request,$id_client,$id_caisse)
+	public function update(Request $request,$id_client)
 	{
 	    $inputs = $request->only(['nom_client','email_client','tel_client']);
-	   //dd($inputs);
-        if (!$this-> OneFieldIsEmpty($inputs)){
-
+        $id_caisse = Session::get('id');
             $last_update = Carbon::now();
             $inputs['last_update'] = $last_update->toDateString();
             Client::where('id_client',$id_client)->where('id_caisse',$id_caisse)->update($inputs);
-            $clients = Client::all()->where('etat',1);
-            return Redirect::route('client.index')->with('clients',$clients);
-        }
 
-        return Redirect::back()->withErrors([$this->message]);
+            return Redirect::route('client.index');
+
 
 	}
 
@@ -125,32 +113,20 @@ class ClientController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id_client,$id_caisse)
+	public function destroy($id_client)
 	{
 
+
+        $id_caisse = Session::get('id');
         $client= Client::where('id_client',$id_client)->where('id_caisse',$id_caisse)->get()->first();
         $inputs=$client['attributes'];
         $inputs['etat'] = 0;
         Client::where('id_client',$id_client)->where('id_caisse',$id_caisse)->update($inputs);
-
-        $clients = Client::all()->where('etat',1);
-        return Redirect::route('client.index');
+        return Redirect::route('client.index')->with(['success'=>'le client a bien été supprimé']);
 
 
     }
 
-    private function OneFieldIsEmpty($fields){
 
-        foreach($fields as $field){
-
-            if(strlen($field)==0  ){
-                $this->message ="all fields  cannot be empty";
-                return true;
-            }
-
-
-        }
-        return false;
-    }
 
 }

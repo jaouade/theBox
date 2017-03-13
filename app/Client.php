@@ -36,6 +36,7 @@ class Client extends Model
 		'tel_client',
 		'etat',
 		'date',
-		'last_update'
+		'last_update',
+        'id_caisse'
 	];
 }

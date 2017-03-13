@@ -5,6 +5,7 @@ use App\Produit;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
@@ -46,9 +47,9 @@ class CategorieController extends Controller {
 
 
 	    $inputs = $request->only(['designation_cat', 'description_cat', 'color_cat']);
-	    if (!$this-> OneFieldIsEmpty($inputs)){
+Hash::make();
 	        if($request->file('image_cat')!=null){
-                $imageName =md5(uniqid(rand(), true)).'.' . $request->file('image_cat')->getClientOriginalExtension();
+                $imageName = Hash::make(uniqid(rand(), true)).'.' . $request->file('image_cat')->getClientOriginalExtension();
                 $inputs['image_cat']= $imageName;
                 $request->file('image_cat')->move(base_path() . '/public/images/categorie/', $imageName);
 
@@ -65,12 +66,9 @@ class CategorieController extends Controller {
             $inputs['id_caisse'] = Session::get('id');
             $inputs['visible'] = 1;
             Categorie::create($inputs);
-            $categories = Categorie::where('visible',1)->get()->all();
-            $produits = Produit::where('visible',1)->get()->all();
-            return view('pages.catalogue-index',compact('produits','categories'));
-        }
-        $category= new Categorie();
-        return Redirect::back()->withErrors([$this->message]);
+            return Redirect::route('cat.index');
+
+
 
 
 
@@ -115,23 +113,22 @@ class CategorieController extends Controller {
 
 	{
 	    $fields=$request->only(['designation_cat','description_cat','color_cat']);
-	    if(!$this->OneFieldIsEmpty($fields)){
-            $last_update =Carbon::now();
-            if ($request->file('image_cat')){
 
-                $imageName =Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->image_cat.'.' . $request->file('image_cat')->getClientOriginalExtension();
-                $request->file('image_cat')->move(base_path() . '/public/images/categorie/', $imageName);
-                $fields['image_cat'] = $imageName;
-                $fields ['last_update'] = $last_update;
+        $last_update =Carbon::now();
 
-                Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->update($fields);
+        $fields ['last_update'] = $last_update;
+        if ($request->file('image_cat')){
 
-            }
+            $imageName =Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->image_cat.'.' . $request->file('image_cat')->getClientOriginalExtension();
+            $request->file('image_cat')->move(base_path() . '/public/images/categorie/', $imageName);
+            $fields['image_cat'] = $imageName;
+
             Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->update($fields);
-            $category= Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->get()->first();
-            return view('pages.update-category',compact('category'));
+
         }
-        return Redirect::back()->withErrors([$this->message]);
+        Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->update($fields);
+        $category= Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->get()->first();
+        return Redirect::route('cat.index')->with('success','les modificetions ont ete enrigistrés');
 
 
 

@@ -33,14 +33,14 @@ class LoginController extends Controller {
 	    $inputs = $request->all();
 	    //dd(sha1($inputs['mdp']));
        // dd(Session::all());
-	    $caisse = $this->getUserByLogin($inputs['login']);
-            if($caisse==null){
+	    $account = $this->getUserByLogin($inputs['login']);
+            if($account==null){
                 return Redirect::back()->withErrors(['ce compte n\'existe pas veuillez réssayer ou créer un nouveau compte']);
             }else{
-                if(sha1($inputs['mdp'])==$caisse->mdp){
-                    Session::put('userToken',md5($caisse->id_account_caisse));
-                    Session::put('id',$caisse->id_account_caisse);
-                    return redirect(route('catalogue.index'));
+                if(sha1($inputs['mdp'])==$account->mdp){
+                    Session::put('userToken',md5($account->id_account_caisse));
+                    Session::put('client',$account);
+                    return redirect('caisses');
                 }else{
                     return Redirect::back()->withErrors(['votre mot de passe n\'est pas correcte veuillez réssayer!!']);
 

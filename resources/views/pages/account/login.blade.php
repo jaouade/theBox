@@ -1,5 +1,5 @@
 
-@extends('base')
+@extends('login')
 
 @section('content')
     <?php
@@ -7,7 +7,7 @@
     $options =["method"=>"POST",'url'=>route('user.connect'),'class'=>'form'];
     $accountCaisse=null;
     ?>
-    <div class="row">
+    <div class="row" style="margin-top: 60px;">
         <div class="col-md-4 offset-md-4">
             <div class="card" style="">
                 <div class="card-body">

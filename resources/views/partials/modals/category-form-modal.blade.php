@@ -5,7 +5,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h3 class="modal-title" id="myModalLabel35"> Ajouter un client</h3>
+                <h3 class="modal-title" id="myModalLabel35"> Ajouter une categorie</h3>
                 @if($errors->any())
                     <h4 class="text-danger">{{$errors->first()}}</h4>
                 @endif
@@ -13,7 +13,7 @@
 
             <?php
 
-                $options =["method"=>"POST",'url'=>route('cat.create'),'files'=>true];
+                $options =["method"=>"POST",'url'=>route('cat.create'),'files'=>true,'id'=>'addCategory'];
                 $category = new \App\Categorie();
 
             ?>
@@ -23,16 +23,16 @@
             <div class="modal-body">
 
                 <fieldset class="form-group floating-label-form-group">
-                    {!! Form::text('designation_cat',null,['class'=>'form-control border-primary','placeholder'=>'designation']) !!}
+                    {!! Form::text('designation_cat',null,['class'=>'form-control border-primary','placeholder'=>'designation','required'=>true]) !!}
                 </fieldset>
                 <fieldset class="form-group floating-label-form-group">
-                    {!! Form::text('description_cat',null,['class'=>'form-control border-primary','placeholder'=>'description']) !!}
+                    {!! Form::textarea('description_cat',null,['class'=>'form-control border-primary','placeholder'=>'description','required'=>true]) !!}
                 </fieldset>
                <fieldset class="form-group floating-label-form-group">
-                    {!! Form::file('image_cat',null,['class'=>' custom-file-control','placeholder'=>'image']) !!}
+                    {!! Form::file('image_cat',null,['class'=>' custom-file-control','placeholder'=>'image','required'=>true]) !!}
                </fieldset>
                  <fieldset class="form-group floating-label-form-group">
-                    {!! Form::text('color_cat',null,['class'=>'form-control border-primary' ,'placeholder'=>'color']) !!}
+                    {!! Form::text('color_cat',null,['class'=>'form-control border-primary' ,'placeholder'=>'color','required'=>true]) !!}
                 </fieldset>
 
 

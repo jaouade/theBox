@@ -2,8 +2,12 @@
 
 
 @section('content')
-    @if($errors->any())
-        <h4 class="ui message negative">{{$errors->first()}}</h4>
-    @endif
     @include('partials.forms.client-form')
+@endsection
+
+@section('js')
+    <script src="{{ asset('/validator/dist/jquery.validate.js') }}" type="text/javascript"></script>
+    <script>
+        $('#updateClient').validate();
+    </script>
 @endsection

@@ -13,7 +13,7 @@
 
             <?php
 
-                $options =["method"=>"POST",'url'=>route('produit.create'),'files'=>true];
+                $options =["method"=>"POST",'url'=>route('produit.create'),'files'=>true,'id'=>'addProduit'];
                 $produit=new \App\Produit();
 
             ?>
@@ -29,55 +29,62 @@
                         <strong>Oh snap!</strong> {{session('produit_error')}}
                     </div>
                 @endif
-                <fieldset class="form-group floating-label-form-group">
-                    {!! Form::label('designation','designation') !!}
-                    {!! Form::text('designation',null,['class'=>'form-control border-primary','placeholder'=>'designation']) !!}
-                </fieldset>
 
-               <fieldset class="form-group floating-label-form-group">
-                   {!! Form::label('description','description') !!}
-                    {!! Form::textarea('description',null,['class'=>'form-control border-primary','placeholder'=>'description']) !!}
-               </fieldset>
-                <fieldset class="form-group floating-label-form-group">
-                   {!! Form::label('image','image') !!}
-                    {!! Form::file('image',null,['class'=>'form-control border-primary']) !!}
-               </fieldset>
-                <fieldset class="form-group floating-label-form-group">
-                    {!! Form::label('color','color') !!}
-                    {!! Form::text('color',null,['class'=>'form-control border-primary','placeholder'=>'designation']) !!}
-                </fieldset>
+                <div class="row">
+                    <fieldset class="form-group floating-label-form-group col-md-6">
+                        {!! Form::label('designation','designation') !!}
+                        {!! Form::text('designation',null,['class'=>'form-control border-success','placeholder'=>'designation','required'=>true]) !!}
+                    </fieldset>
 
-                 <fieldset class="form-group floating-label-form-group">
-                     {!! Form::label('id_cat','categorie') !!}
-                     {!! Form::select('id_cat',App\Categorie::where('visible',1)->lists('designation_cat','id_categorie'),null,['class'=>'form-control']) !!}
+                    <fieldset class="form-group floating-label-form-group col-md-6">
+                        {!! Form::label('description','description') !!}
+                        {!! Form::text('description',null,['class'=>'form-control border-success','placeholder'=>'description','required'=>true]) !!}
+                    </fieldset>
+                </div>
 
-                 </fieldset>
-                <hr>
-                <h1>Ajouter un  prix</h1>
-                <hr>
-                <fieldset class="form-group floating-label-form-group">
-                    {!! Form::label('prix','prix') !!}
-                    {!! Form::number('prix',null,['class'=>'form-control border-primary','placeholder'=>'prix']) !!}
-                </fieldset>
+                    <div class="row">
 
-                <fieldset class="form-group floating-label-form-group">
-                    {!! Form::label('tva','tva') !!}
-                    {!! Form::number('tva',null,['class'=>'form-control border-primary','placeholder'=>'tva']) !!}
+                        <fieldset class="form-group floating-label-form-group col-md-6">
+                            {!! Form::label('color','color') !!}
+                            {!! Form::text('color',null,['class'=>'form-control border-success','placeholder'=>'designation','required'=>true]) !!}
+                        </fieldset>
+
+                        <fieldset class="form-group floating-label-form-group col-md-6">
+                            {!! Form::label('id_cat','categorie') !!}
+                            {!! Form::select('id_cat',App\Categorie::where('visible',1)->lists('designation_cat','id_categorie'),null,['class'=>'form-control','required'=>true]) !!}
+
+                        </fieldset>
+                    </div>
+                    <fieldset class="form-group floating-label-form-group">
+                    {!! Form::label('image','image') !!}
+                    {!! Form::file('image',null,['class'=>'form-control border-success']) !!}
                 </fieldset>
-                <fieldset class="form-group floating-label-form-group">
-                    {!! Form::label('label','label') !!}
-                    {!! Form::text('label',null,['class'=>'form-control border-primary','placeholder'=>'label']) !!}
-                </fieldset>
-                <fieldset class="form-group floating-label-form-group">
-                    {!! Form::label('code_bar','code bar') !!}
-                    {!! Form::text('code_bar',null,['class'=>'form-control border-primary','placeholder'=>'label']) !!}
-                </fieldset>
-                    {{--<div id="prixForm" ></div>--}}
-                    {{--<a id="addPrix" class="btn btn-link btn-success"> ajouter un prixx</a>--}}
+                    <div id="prixForm" ></div>
+                    <a  onclick="addPrixForm()" class="btn btn-link btn-warning"> ajouter un prix</a>
+                    <hr>
+                <div class="row " id="line">
+                    <fieldset class="form-group floating-label-form-group col-md-3">
+                        {!! Form::label('prix[]','prix') !!}
+                        {!! Form::number('prix[]',null,['class'=>'form-control border-success','placeholder'=>'prix' ,'required'=>true,'min'=>0]) !!}
+                    </fieldset>
+
+                    <fieldset class="form-group floating-label-form-group col-md-3">
+                        {!! Form::label('tva[]','tva') !!}
+                        {!! Form::number('tva[]',null,['class'=>'form-control border-success','placeholder'=>'tva' ,'required'=>true,'min'=>0]) !!}
+                    </fieldset>
+                    <fieldset class="form-group floating-label-form-group col-md-3">
+                        {!! Form::label('label[]','label') !!}
+                        {!! Form::text('label[]',null,['class'=>'form-control border-success','placeholder'=>'label' ,'required'=>true]) !!}
+                    </fieldset>
+                    <fieldset class="form-group floating-label-form-group col-md-3">
+                        {!! Form::label('code_bar[]','code bar') !!}
+                        {!! Form::text('code_bar[]',null,['class'=>'form-control border-success','placeholder'=>'code bar' ,'required'=>true]) !!}
+                    </fieldset>
+                </div>
 
                 <div class="modal-footer">
-                    <input type="reset" class="btn btn-outline-secondary " data-dismiss="modal" value="annuler">
-                    <input type="submit" class="btn btn-outline-primary " value="ajouter">
+                    <input type="reset" class="btn btn-danger " data-dismiss="modal" value="annuler">
+                    <input type="submit" class="btn btn-success " value="ajouter">
                 </div>
             {!! Form::close()!!}
 
