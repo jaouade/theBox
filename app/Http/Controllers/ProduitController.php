@@ -80,7 +80,7 @@ class ProduitController extends Controller {
                 $prix['code_bar']=$prix_inputs['code_bar'][$i];
                 Prix::create($prix);
             }
-            return Redirect::route('produit.index');
+            return Redirect::route('produit.index')->with(['success'=>'le produit a été bien ajouté']);
 	}
 
 	/**

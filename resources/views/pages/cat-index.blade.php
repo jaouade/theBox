@@ -12,7 +12,7 @@
                     <div class="card-block">
                         <h5>toutes les categories pour de la caisse { ... }</h5>
                         <div class="col-xs-12 mt-1 mb-3">
-                            <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#client">
+                            <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#category">
                                 Ajouter une nouvelle categorie
                             </button>
                             <hr>
@@ -80,7 +80,7 @@
         </div>
 
 
-        @include('partials.modals.produit-form-modal')
+        @include('partials.modals.category-form-modal')
 
 @endsection
 @section('js')

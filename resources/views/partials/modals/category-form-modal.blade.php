@@ -26,7 +26,7 @@
                     {!! Form::text('designation_cat',null,['class'=>'form-control border-primary','placeholder'=>'designation','required'=>true]) !!}
                 </fieldset>
                 <fieldset class="form-group floating-label-form-group">
-                    {!! Form::textarea('description_cat',null,['class'=>'form-control border-primary','placeholder'=>'description','required'=>true]) !!}
+                    {!! Form::text('description_cat',null,['class'=>'form-control border-primary','placeholder'=>'description','required'=>true]) !!}
                 </fieldset>
                <fieldset class="form-group floating-label-form-group">
                     {!! Form::file('image_cat',null,['class'=>' custom-file-control','placeholder'=>'image','required'=>true]) !!}

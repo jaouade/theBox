@@ -57,7 +57,7 @@ class CategorieController extends Controller {
         $inputs['id_caisse'] = Session::get('id');
         $inputs['visible'] = 1;
         Categorie::create($inputs);
-        return Redirect::route('cat.index');
+        return Redirect::route('cat.index')->with(['success'=>'la categorie a bien été ajoutée ']);
 
 
 
