@@ -17,15 +17,34 @@
                     </div>
                     <div class="card-block">
 
-                        @if($errors->any())
-                            <div class="alert bg-danger alert-icon-left alert-arrow-left alert-dismissible fade in mb-2" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                                <strong>Oh snap!</strong> {{$errors->first()}}
-                            </div>
+                            @if(Session::has('emailError'))
 
-                        @endif
+                                <div class="alert bg-danger alert-icon-left alert-dismissible fade in mb-2" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    <strong>Ooops!</strong><br>{{ Session::get('emailError') }}.
+                                </div>
+                            @endif
+
+                            @if(Session::has('noUserIn'))
+
+                                    <div class="alert bg-danger alert-icon-left alert-dismissible fade in mb-2" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                        <strong>Ooops!</strong><br>{{ Session::get('noUserIn') }}.
+                                    </div>
+                                @endif
+                            @if(Session::has('passError'))
+
+                                <div class="alert bg-danger alert-icon-left alert-dismissible fade in mb-2" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    <strong>Ooops!</strong><br>{{ Session::get('passError') }}.
+                                </div>
+                            @endif
                         {!! Form::model($accountCaisse,$options)  !!}
                         <div class="form-body">
 

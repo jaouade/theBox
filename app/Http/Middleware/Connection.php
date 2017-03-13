@@ -21,8 +21,10 @@ class Connection {
 	{
 
 	   if(!Session::has('userToken') && $request->path() != 'user/connecting' && $request->path()!='user/login'){
-	        return new Response(view('pages.account.login')->withErrors(['vous n\'etes pas connectés veuillez se connecter pour accéder à la plateforme ']));
-       }elseif(Session::has('userToken') && $request->path()=='user/login' ){
+
+	       return Redirect::route('user.login')->with(['noUserIn'=>'vous n\'etes pas connectés veuillez se connecter pour accéder à la plateforme ']);
+
+	   }elseif(Session::has('userToken') && $request->path()=='user/login' ){
 	       return Redirect::to(Session::all()['_previous']['url']);
        }
 

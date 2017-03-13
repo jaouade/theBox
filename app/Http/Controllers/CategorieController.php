@@ -19,7 +19,7 @@ class CategorieController extends Controller {
      private $message ="";
 	public function index()
 	{
-        $categories = Categorie::where('visible',1)->get()->all();
+        $categories = Categorie::where('visible',1)->where('id_caisse',Session::get('id'))->get()->all();
         return view('pages.cat-index',compact('categories'));
 	}
 
@@ -31,9 +31,6 @@ class CategorieController extends Controller {
 	public function create()
 	{
 	    $category = new Categorie();
-	   // dd($category);
-
-
 		return view('pages.add-category',compact('category'));
 	}
 
@@ -45,28 +42,22 @@ class CategorieController extends Controller {
 	public function store(Request $request)
 	{
 
+        $inputs = $request->only(['designation_cat', 'description_cat', 'color_cat']);
+        $id=Categorie::max("id_categorie");
+        if($id==null) $id=0;
+        if($request->file('image_cat')!=null){
+            $imageName = Hash::make(uniqid(rand(), true)).'.' . $request->file('image_cat')->getClientOriginalExtension();
+            $inputs['image_cat']= $imageName;
+            $request->file('image_cat')->move(base_path() . '/public/images/categorie/', $imageName);
 
-	    $inputs = $request->only(['designation_cat', 'description_cat', 'color_cat']);
-Hash::make();
-	        if($request->file('image_cat')!=null){
-                $imageName = Hash::make(uniqid(rand(), true)).'.' . $request->file('image_cat')->getClientOriginalExtension();
-                $inputs['image_cat']= $imageName;
-                $request->file('image_cat')->move(base_path() . '/public/images/categorie/', $imageName);
-
-            }
-            $last_update = Carbon::now();
-            $inputs['last_update'] = $last_update->toDateString();
-            //dd(Categorie::all()->last()['attributes']['id_categorie']);
-            if(Categorie::all()->last()['attributes']['id_categorie']==null){
-                $inputs['id_categorie'] = 1;
-
-            }else{
-                $inputs['id_categorie'] = Categorie::all()->last()['attributes']['id_categorie']+1;
-            }
-            $inputs['id_caisse'] = Session::get('id');
-            $inputs['visible'] = 1;
-            Categorie::create($inputs);
-            return Redirect::route('cat.index');
+        }
+        $last_update = Carbon::now();
+        $inputs['last_update'] = $last_update->toDateString();
+        $inputs['id_categorie'] = ++$id;
+        $inputs['id_caisse'] = Session::get('id');
+        $inputs['visible'] = 1;
+        Categorie::create($inputs);
+        return Redirect::route('cat.index');
 
 
 
@@ -93,9 +84,11 @@ Hash::make();
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id_categorie,$id)
+	public function edit($id_categorie)
+
 	{
-       $category= Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id)->get()->first();
+	    $id_caisse  =Session::get('id');
+       $category= Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->get()->first();
         if($category!=null){
             return view('pages.update-category',compact('category'));
         }
@@ -109,25 +102,23 @@ Hash::make();
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id_categorie,$id_caisse,Request $request)
+	public function update($id_categorie,Request $request)
 
 	{
 	    $fields=$request->only(['designation_cat','description_cat','color_cat']);
 
         $last_update =Carbon::now();
-
+        $id_caisse = Session::get('id');
         $fields ['last_update'] = $last_update;
         if ($request->file('image_cat')){
 
             $imageName =Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->image_cat.'.' . $request->file('image_cat')->getClientOriginalExtension();
             $request->file('image_cat')->move(base_path() . '/public/images/categorie/', $imageName);
             $fields['image_cat'] = $imageName;
-
             Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->update($fields);
-
+            return Redirect::route('cat.index')->with('success','les modificetions ont ete enrigistrés');
         }
         Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->update($fields);
-        $category= Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->get()->first();
         return Redirect::route('cat.index')->with('success','les modificetions ont ete enrigistrés');
 
 
@@ -140,28 +131,18 @@ Hash::make();
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id_categorie,$id_caisse)
+	public function destroy($id_categorie)
 	{
+	    $id_caisse = Session::get('id');
 		$cat = Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->get()->first();
         $inputs=$cat['attributes'];
         $inputs['visible'] = 2;
         Categorie::where('id_categorie',$id_categorie)->where('id_caisse',$id_caisse)->update($inputs);
 
-        return Redirect::route('catalogue.index');
+        return Redirect::route('cat.index')->with(['success'=>'la categorie a bien été supprimée']);
+;
 	}
 
-	private function OneFieldIsEmpty($fields){
 
-	    foreach($fields as $field){
-
-	        if(strlen($field)==0  ){
-	            $this->message ="all fields  cannot be empty";
-	            return true;
-            }
-
-
-        }
-        return false;
-}
 
 }

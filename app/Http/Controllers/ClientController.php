@@ -22,7 +22,7 @@ class ClientController extends Controller {
 	public function index()
 	{
         $client = new Client();
-        $clients = Client::where('etat',1)->get()->all();
+        $clients = Client::where('etat',1)->where('id_caisse',Session::get('id'))->get()->all();
         return view('pages.client-index',compact('client','clients'));
 
 	}
@@ -83,7 +83,7 @@ class ClientController extends Controller {
         if($client!=null){
             return view('pages.update-client',compact('client'));
         }
-        return Redirect::back()->with(['error'=>'nous n\'avons pas pu completer l\'operation veuillez reéssayer plus tard ']);
+        return Redirect::route('client.index')->with(['error'=>'nous n\'avons pas pu completer l\'operation veuillez reéssayer plus tard ']);
 
 
     }

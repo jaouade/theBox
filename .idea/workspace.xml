@@ -2,31 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81ed02d6-6c65-436e-a177-df44e63876ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/login.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/pages/caisses.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/pages/ventes.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/kel.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/kel.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/produit/75a99c9c42fc8fabe744fafbe89f3eb2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/PrixController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/05e8b1f55f1e5102e87d22d7681e355d.png" afterPath="$PROJECT_DIR$/public/images/produit/05e8b1f55f1e5102e87d22d7681e355d.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/10978f3a31e56f7ad780cbbe37d1dfbd.jpg" afterPath="$PROJECT_DIR$/public/images/produit/10978f3a31e56f7ad780cbbe37d1dfbd.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/1281fa2527768e44f70dd9567d5102df.png" afterPath="$PROJECT_DIR$/public/images/produit/1281fa2527768e44f70dd9567d5102df.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/18c8c77874741ce702d8b3f9c7b0f55f.png" afterPath="$PROJECT_DIR$/public/images/produit/18c8c77874741ce702d8b3f9c7b0f55f.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/1de2293f4041e7706d326f8b5c62909d.jpg" afterPath="$PROJECT_DIR$/public/images/produit/1de2293f4041e7706d326f8b5c62909d.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/3989ddbfe8094c8e2e3786c3a6435ed8.jpg" afterPath="$PROJECT_DIR$/public/images/produit/3989ddbfe8094c8e2e3786c3a6435ed8.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/3c67f1d2bbdd0e6bbbbc39199042357f.png" afterPath="$PROJECT_DIR$/public/images/produit/3c67f1d2bbdd0e6bbbbc39199042357f.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/4aaf75b09f9372bb59c9b3637087adbc.png" afterPath="$PROJECT_DIR$/public/images/produit/4aaf75b09f9372bb59c9b3637087adbc.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/5625fc8d37e34a4fbbdab5da0091db80.jpg" afterPath="$PROJECT_DIR$/public/images/produit/5625fc8d37e34a4fbbdab5da0091db80.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/5bf3f027e1a7610f361373a5c40d03b7.png" afterPath="$PROJECT_DIR$/public/images/produit/5bf3f027e1a7610f361373a5c40d03b7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/657cde155cecf2b7d3424256fd1e65b2.png" afterPath="$PROJECT_DIR$/public/images/produit/657cde155cecf2b7d3424256fd1e65b2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/7a802905765994ec4db76b950be1fed3.png" afterPath="$PROJECT_DIR$/public/images/produit/7a802905765994ec4db76b950be1fed3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/814233277a0c929539f3836d41a13d43.png" afterPath="$PROJECT_DIR$/public/images/produit/814233277a0c929539f3836d41a13d43.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/8e370b2cb65d6116e0f77136724b52f0.png" afterPath="$PROJECT_DIR$/public/images/produit/8e370b2cb65d6116e0f77136724b52f0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/97f171815bc882dba5f0bd71e6fba0c4.png" afterPath="$PROJECT_DIR$/public/images/produit/97f171815bc882dba5f0bd71e6fba0c4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/a202551b69c9072715e781efcc016410.png" afterPath="$PROJECT_DIR$/public/images/produit/a202551b69c9072715e781efcc016410.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/a487f27a5ed276ef0a7bf712ed17310d.jpg" afterPath="$PROJECT_DIR$/public/images/produit/a487f27a5ed276ef0a7bf712ed17310d.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/b4e293621b08df4f8012640b6f764385.png" afterPath="$PROJECT_DIR$/public/images/produit/b4e293621b08df4f8012640b6f764385.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/b510ff442a93c02535c2421c55c78728.png" afterPath="$PROJECT_DIR$/public/images/produit/b510ff442a93c02535c2421c55c78728.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/bfc492f0cb249953d65a77ae16295540.png" afterPath="$PROJECT_DIR$/public/images/produit/bfc492f0cb249953d65a77ae16295540.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/e17c94f9a751f07b36518f4323cae32e.png" afterPath="$PROJECT_DIR$/public/images/produit/e17c94f9a751f07b36518f4323cae32e.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/e26a7bb7c757725902897f5305a0ea09.png" afterPath="$PROJECT_DIR$/public/images/produit/e26a7bb7c757725902897f5305a0ea09.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/e448e6f2cb787254c7fa6543ce333f82.png" afterPath="$PROJECT_DIR$/public/images/produit/e448e6f2cb787254c7fa6543ce333f82.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/ebaf2590b693947857e9e6d61803e91d.jpg" afterPath="$PROJECT_DIR$/public/images/produit/ebaf2590b693947857e9e6d61803e91d.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/efec49e8aa3919fa22bfa52765e050b1.png" afterPath="$PROJECT_DIR$/public/images/produit/efec49e8aa3919fa22bfa52765e050b1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/fd9f4bd1bbaefa1ee43d17a8fcf4a337.png" afterPath="$PROJECT_DIR$/public/images/produit/fd9f4bd1bbaefa1ee43d17a8fcf4a337.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/produit/fe260c16ff65361703a55079ba58f3ea.png" afterPath="$PROJECT_DIR$/public/images/produit/fe260c16ff65361703a55079ba58f3ea.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Client.php" afterPath="$PROJECT_DIR$/app/Client.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CategorieController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategorieController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ProduitController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProduitController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/connection/LoginController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/connection/LoginController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/Connection.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/Connection.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/base.blade.php" afterPath="$PROJECT_DIR$/resources/views/base.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/account/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/account/login.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/cat-index.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/cat-index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/client-index.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/client-index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/produit-index.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/produit-index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/update-category.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/update-category.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/update-client.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/update-client.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pages/update-produit.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/update-produit.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/forms/category-form.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/forms/category-form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/forms/client-form.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/forms/client-form.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/modals/category-form-modal.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/modals/category-form-modal.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/modals/client-form-modal.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/modals/client-form-modal.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/modals/prix-form-modal.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/modals/prix-form-modal.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/modals/produit-form-modal.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/modals/produit-form-modal.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,49 +88,7 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="Produit" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="lacaisse" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
         <option name="myItemId" value="Prix" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="lacaisse" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Client" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="lacaisse" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Account" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -117,51 +96,69 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="caisses.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/caisses.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="client-index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/client-index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="44" column="60" lean-forward="false" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="produit-index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pages/produit-index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="47" column="119" lean-forward="false" selection-start-line="47" selection-start-column="119" selection-end-line="47" selection-end-column="119" />
+            <state relative-caret-position="395">
+              <caret line="114" column="30" lean-forward="false" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategorieController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategorieController.php">
+      <file leaf-file-name="produit-form-modal.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/partials/modals/produit-form-modal.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="122" column="45" lean-forward="false" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
+            <state relative-caret-position="373">
+              <caret line="70" column="33" lean-forward="false" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+              <folding>
+                <marker date="1489377374730" expanded="true" signature="2758:2972" ph="..." />
+                <marker date="1489377374730" expanded="true" signature="2772:2970" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prix-form-modal.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/partials/modals/prix-form-modal.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="39" column="57" lean-forward="false" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
+      <file leaf-file-name="PrixController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PrixController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="85" column="95" lean-forward="false" selection-start-line="85" selection-start-column="95" selection-end-line="85" selection-end-column="95" />
+            <state relative-caret-position="517">
+              <caret line="48" column="42" lean-forward="false" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lacaisse.Prix" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Prix">
+          <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="59" column="76" lean-forward="false" selection-start-line="59" selection-start-column="71" selection-end-line="59" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -170,54 +167,9 @@
       <file leaf-file-name="ProduitController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProduitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="198">
+              <caret line="62" column="41" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="41" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProduitControllr.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProduitControllr.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1488983788000" expanded="true" signature="2913:3227" ph="update Produ... " />
-                <marker date="1488983788000" expanded="true" signature="3425:3713" ph="update Produ... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WelcomeController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/connection/LoginController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="44" column="99" lean-forward="false" selection-start-line="44" selection-start-column="99" selection-end-line="44" selection-end-column="99" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-              <folding>
-                <element signature="e#39#55#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -249,9 +201,9 @@
       <find>var elmnt = document.getElementsByTagName(&quot;DIV&quot;)[0];     var cln = elmnt.cloneNode(true);     document.body.appendChild(cln);</find>
       <find>sales</find>
       <find>span</find>
-      <find>ava</find>
       <find>vente</find>
       <find>vent</find>
+      <find>ava</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -260,9 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CaisseController.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/add-caisse.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/caisse-form.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/css/app.min.css" />
         <option value="$PROJECT_DIR$/public/assets/js/app.min.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProduitControllr.php" />
@@ -282,35 +231,38 @@
         <option value="dbtable:/bf999bef/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Prix" />
         <option value="$PROJECT_DIR$/app/Prix.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/footer.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/Connection.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/test.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/catalogue-index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/account/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/ventes.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CategorieController.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/update-category.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/forms/category-form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/modals/category-form-modal.blade.php" />
         <option value="dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Produit" />
-        <option value="$PROJECT_DIR$/resources/views/pages/update-produit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/base.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/modals/client-form-modal.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/cat-index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/update-client.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/forms/client-form.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/client-index.blade.php" />
         <option value="$PROJECT_DIR$/app/Client.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/modals/produit-form-modal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/account/login.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/connection/LoginController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/menu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pages/caisses.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pages/produit-index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/update-produit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/menu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/client-index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategorieController.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/forms/category-form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/update-category.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/cat-index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/connection/LoginController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/Connection.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/account/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProduitController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/modals/produit-form-modal.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/modals/prix-form-modal.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/pages/produit-index.blade.php" />
+        <option value="dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Prix" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PrixController.php" />
       </list>
     </option>
   </component>
@@ -407,6 +359,80 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modals" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="forms" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -422,6 +448,64 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -454,6 +538,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lacaisse" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Middleware" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -516,7 +622,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../projects/lacaisse" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Controller.php&#10;/var/www/html/projects/lacaisse/vendor/laravel/framework/src/Illuminate/Http/RedirectResponse.php&#10;/var/www/html/projects/lacaisse/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php&#10;/var/www/html/projects/lacaisse/.env&#10;/var/www/html/projects/lacaisse/vendor/illuminate/html/FormBuilder.php&#10;/var/www/html/projects/lacaisse/vendor/laravelcollective/html/src/FormBuilder.php" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="SearchEverywhereHistoryKey" value="prod&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/pages/produit-index.blade.php&#10;client&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/pages/client-index.blade.php&#10;Acc&#9;FILE&#9;file:///var/www/html/lacaisse/app/AccountCaisse.php&#10;cais&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/pages/caisses.blade.php&#10;menu&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/partials/menu.blade.php&#10;routes&#9;FILE&#9;file:///var/www/html/lacaisse/app/Http/routes.php&#10;base&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/base.blade.php&#10;login&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/pages/account/login.blade.php&#10;Prod&#9;FILE&#9;file:///var/www/html/lacaisse/app/Http/Controllers/ProduitController.php&#10;Client&#9;FILE&#9;file:///var/www/html/lacaisse/app/Client.php&#10;$errors&#9;null&#9;null&#10;FormB&#9;FILE&#9;file:///var/www/html/projects/lacaisse/vendor/laravelcollective/html/src/FormBuilder.php&#10;Formbu&#9;null&#9;null&#10;Form&#9;FILE&#9;file:///var/www/html/projects/lacaisse/vendor/laravelcollective/html/src/FormBuilder.php" />
+    <property name="SearchEverywhereHistoryKey" value="caiss&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/pages/caisses.blade.php&#10;prod&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/pages/produit-index.blade.php&#10;client&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/pages/client-index.blade.php&#10;Acc&#9;FILE&#9;file:///var/www/html/lacaisse/app/AccountCaisse.php&#10;cais&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/pages/caisses.blade.php&#10;menu&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/partials/menu.blade.php&#10;routes&#9;FILE&#9;file:///var/www/html/lacaisse/app/Http/routes.php&#10;base&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/base.blade.php&#10;login&#9;FILE&#9;file:///var/www/html/lacaisse/resources/views/pages/account/login.blade.php&#10;Prod&#9;FILE&#9;file:///var/www/html/lacaisse/app/Http/Controllers/ProduitController.php&#10;Client&#9;FILE&#9;file:///var/www/html/lacaisse/app/Client.php&#10;$errors&#9;null&#9;null&#10;FormB&#9;FILE&#9;file:///var/www/html/projects/lacaisse/vendor/laravelcollective/html/src/FormBuilder.php&#10;Formbu&#9;null&#9;null&#10;Form&#9;FILE&#9;file:///var/www/html/projects/lacaisse/vendor/laravelcollective/html/src/FormBuilder.php" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
@@ -626,16 +732,16 @@
       <workItem from="1489054903091" duration="18465000" />
       <workItem from="1489103465021" duration="11161000" />
       <workItem from="1489341026373" duration="2336000" />
-      <workItem from="1489343976650" duration="24940000" />
+      <workItem from="1489343976650" duration="34450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189888000" />
+    <option name="totallyTimeSpent" value="199398000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20398407" sideWeight="0.50617284" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29561752" sideWeight="0.49382716" order="0" side_tool="false" content_ui="combo" />
@@ -671,7 +777,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20398407" sideWeight="0.50617284" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29561752" sideWeight="0.49382716" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1936255" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1936255" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24940239" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -690,30 +796,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-293">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" column="61" lean-forward="false" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/bf999bef/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Account_Caisse" />
     <entry file="file://$PROJECT_DIR$/vendor/laravelcollective/html/src/FormBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -727,14 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="25" column="67" lean-forward="false" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -773,7 +847,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/ventes.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/sales.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="60" column="10" lean-forward="false" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
@@ -789,55 +863,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/modals/category-form-modal.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/update-produit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1314">
-          <caret line="5" column="82" lean-forward="false" selection-start-line="5" selection-start-column="82" selection-end-line="5" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Produit">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/modals/client-form-modal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="33" column="48" lean-forward="true" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/cat-index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="90" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/update-client.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -854,56 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
           <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Client">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/update-category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/forms/category-form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/modals/produit-form-modal.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="80" column="50" lean-forward="false" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Prix">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -937,35 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/account/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Account">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="44" column="42" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Account.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -990,80 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/menu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="40" column="35" lean-forward="false" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/caisses.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/client-index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="44" column="60" lean-forward="false" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pages/produit-index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="47" column="119" lean-forward="false" selection-start-line="47" selection-start-column="119" selection-end-line="47" selection-end-column="119" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategorieController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="122" column="45" lean-forward="false" selection-start-line="122" selection-start-column="45" selection-end-line="122" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="85" column="95" lean-forward="false" selection-start-line="85" selection-start-column="95" selection-end-line="85" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/connection/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="44" column="99" lean-forward="false" selection-start-line="44" selection-start-column="99" selection-end-line="44" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding>
-            <element signature="e#39#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProduitController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProduitControllr.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1077,8 +953,248 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        <state relative-caret-position="540">
+          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Account">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="41" column="38" lean-forward="true" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+          <folding>
+            <element signature="e#39#55#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Categorie">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/update-produit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="80" column="68" lean-forward="false" selection-start-line="80" selection-start-column="68" selection-end-line="80" selection-end-column="68" />
+          <folding>
+            <marker date="1489373932654" expanded="true" signature="2659:2856" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Produit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/caisses.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="18" column="132" lean-forward="false" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="132" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="64" column="175" lean-forward="false" selection-start-line="64" selection-start-column="175" selection-end-line="64" selection-end-column="175" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Client">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/client-index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="102" column="13" lean-forward="true" selection-start-line="95" selection-start-column="4" selection-end-line="102" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ClientController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="78" lean-forward="false" selection-start-line="24" selection-start-column="78" selection-end-line="24" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategorieController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="90" column="94" lean-forward="false" selection-start-line="90" selection-start-column="94" selection-end-line="90" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/update-client.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="12" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/forms/category-form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="105" lean-forward="true" selection-start-line="1" selection-start-column="105" selection-end-line="1" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/update-category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/cat-index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="57" column="68" lean-forward="false" selection-start-line="57" selection-start-column="68" selection-end-line="57" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/connection/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="44" column="61" lean-forward="false" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/account/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="44" column="49" lean-forward="false" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/modals/category-form-modal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="51" column="6" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="59" column="76" lean-forward="false" selection-start-line="59" selection-start-column="71" selection-end-line="59" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/modals/produit-form-modal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="70" column="33" lean-forward="false" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+          <folding>
+            <marker date="1489377374730" expanded="true" signature="2758:2972" ph="..." />
+            <marker date="1489377374730" expanded="true" signature="2772:2970" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/modals/prix-form-modal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="39" column="57" lean-forward="false" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pages/produit-index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="114" column="30" lean-forward="false" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProduitController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="62" column="41" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/23dcc1c4/62a39a70-fc9f-4485-8194-56412d3e6ed3/lacaisse.Prix">
+      <provider editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PrixController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="48" column="42" lean-forward="false" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
           <folding />
         </state>
       </provider>

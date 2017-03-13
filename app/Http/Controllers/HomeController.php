@@ -19,11 +19,33 @@ class HomeController extends Controller {
 
         $caisses=Account::where('id_account_caisse',Session::get('client')->id_account_caisse)->get();
 		return view('pages.caisses',compact('caisses'));
+	}public function stockes()
+	{
+
+
+        return response('coming soon');
+	}
+	public function shop()
+	{
+
+
+        return response('coming soon');
+	}
+	public function sales()
+	{
+
+
+        return view('pages.sales');
 	}
 
 
 	public function switchCaisse($id){
-        Session::put('id',$id);
+        $caisse=Account::where('id_account_caisse',Session::get('client')->id_account_caisse)
+                            ->where('id_caisse',$id)
+                            ->first();
+        if ($caisse!=null){
+            Session::put('id',$id);
+        }
         return redirect('sales');
     }
 

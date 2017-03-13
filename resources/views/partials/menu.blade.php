@@ -54,6 +54,7 @@
                 </a>
             </li>
         </ul>
+        @if(\Illuminate\Support\Facades\Session::has('userToken'))
         <ul class="nav navbar-nav float-xs-right">
 
             <li class="dropdown dropdown-user nav-item nav-link"><a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link">
@@ -61,13 +62,14 @@
                         <img src="{{ asset('/assets/images/portrait/small/avatar-s-1.png') }}" alt="avatar">
                         <i></i>
                     </span>
-                    <h6 class="user-name"> lacaisse.ma</h6><i class="caret"></i></a>
+                    <h6 class="user-name"> {{\Illuminate\Support\Facades\Session::get('client')->login}}-( {{\Illuminate\Support\Facades\Session::get('client')->nom_societe}})</h6><i class="caret"></i></a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a href="{{url('caisses')}}" class="dropdown-item"><i class="icon-list"></i> Mes Caisses</a>
                     <a href="{{route('user.logout')}}" class="dropdown-item"><i class="icon-power3"></i> Logout</a>
                 </div>
             </li>
         </ul>
+        @endif
     </div>
     <!-- /horizontal menu content-->
 </div>

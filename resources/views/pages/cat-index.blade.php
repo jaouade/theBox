@@ -53,9 +53,9 @@
                                             <td>{{$category->designation_cat}}</td>
                                             <td>{{sizeof(\App\Produit::where('id_cat',$category->id_categorie)->get()->all())}} artcile(s)</td>
 
-                                            <td>
-                                                <a class="btn btn-outline-danger" href="{{route('cat.delete',[$category->id_categorie,$category->id_caisse])}}">supprimer</a>
-                                                <a class="btn btn-outline-primary" href="{{route('cat.edit',[$category->id_categorie,$category->id_caisse])}}">editer</a>
+                                            <td width="20%">
+                                                <a class="btn btn-sm btn-danger" onclick="deleteCat({{$category->id_categorie}})">supprimer</a>
+                                                <a class="btn btn-sm btn-primary" href="{{route('cat.edit',[$category->id_categorie])}}">editer</a>
                                             </td>
 
 
@@ -87,6 +87,15 @@
     <script src="{{ asset('/validator/dist/jquery.validate.js') }}" type="text/javascript"></script>
     <script>
         $('#addCategory').validate();
+    </script>
+
+    <script>
+        function deleteCat(id) {
+            let r = confirm("voulez vous continuez cette operation ?");
+            if (r) {
+                window.location.href = "http://localhost/lacaisse/public/index.php/cat/delete/"+id;
+            }
+        }
     </script>
 @endsection
 

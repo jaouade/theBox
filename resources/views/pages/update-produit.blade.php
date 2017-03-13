@@ -48,7 +48,7 @@
 
                                 <fieldset class="form-group floating-label-form-group col-md-6">
                                     {!! Form::label('id_cat','categorie') !!}
-                                    {!! Form::select('id_cat',App\Categorie::where('visible',1)->lists('designation_cat','id_categorie'),null,['class'=>'form-control']) !!}
+                                    {!! Form::select('id_cat',App\Categorie::where('visible',1)->where('id_caisse',\Illuminate\Support\Facades\Session::get('id'))->lists('designation_cat','id_categorie'),null,['class'=>'form-control']) !!}
 
                                 </fieldset>
                             </div>
@@ -59,26 +59,28 @@
                             </fieldset>
 
                             <hr>
+                             @foreach($prices as $prix)
                             <div class="row">
                                 <fieldset class="form-group floating-label-form-group col-md-3">
-                                    {!! Form::label('prix','prix') !!}
-                                    {!! Form::number('prix',$prix->prix,['class'=>'form-control border-primary','placeholder'=>'prix']) !!}
+                                    {!! Form::label('prix[]','prix') !!}
+                                    {!! Form::number('prix[]',$prix->prix,['class'=>'form-control border-primary','placeholder'=>'prix']) !!}
                                 </fieldset>
 
                                 <fieldset class="form-group floating-label-form-group col-md-3">
-                                    {!! Form::label('tva','tva') !!}
-                                    {!! Form::number('tva',$prix->tva,['class'=>'form-control border-primary','placeholder'=>'tva']) !!}
+                                    {!! Form::label('tva[]','tva') !!}
+                                    {!! Form::number('tva[]',$prix->tva,['class'=>'form-control border-primary','placeholder'=>'tva']) !!}
                                 </fieldset>
                                 <fieldset class="form-group floating-label-form-group col-md-3">
-                                    {!! Form::label('label','label') !!}
-                                    {!! Form::text('label',$prix->label,['class'=>'form-control border-primary','placeholder'=>'label']) !!}
+                                    {!! Form::label('label[]','label') !!}
+                                    {!! Form::text('label[]',$prix->label,['class'=>'form-control border-primary','placeholder'=>'label']) !!}
                                 </fieldset>
                                 <fieldset class="form-group floating-label-form-group col-md-3">
-                                    {!! Form::label('code_bar','code bar') !!}
-                                    {!! Form::text('code_bar',$prix->code_bar,['class'=>'form-control border-primary','placeholder'=>'code bar']) !!}
+                                    {!! Form::label('code_bar[]','code bar') !!}
+                                    {!! Form::text('code_bar[]',$prix->code_bar,['class'=>'form-control border-primary','placeholder'=>'code bar']) !!}
                                 </fieldset>
+                                <input type="hidden" name="id_prix[]" value="{{$prix->id_prix}}">
                             </div>
-
+                            @endforeach
                             <div class="form-actions center">
                                 <button type="submit" class="btn btn-success">mettre à jour</button>
                             </div>

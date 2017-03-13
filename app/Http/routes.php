@@ -26,19 +26,9 @@ Route::get('switch-caisse/{id}',['as'=>'switch-caisse','uses'=>'HomeController@s
 Route::get('cat/add',['as'=>'cat.add','uses'=>'CategorieController@create'] );
 Route::post('cat/create',['as'=>'cat.create','uses'=>'CategorieController@store'] );
 Route::get('cat/',['as'=>'cat.index','uses'=>'CategorieController@index'] );
-Route::get('cat/delete/{id_categorie}/{id_caisse}',['as'=>'cat.delete','uses'=>'CategorieController@destroy'] );
-Route::get('cat/edit/{id_categorie}/{id_caisse}',['as'=>'cat.edit','uses'=>'CategorieController@edit'] );
-Route::put('cat/update/{id_categorie}/{id_caisse}',['as'=>'cat.update','uses'=>'CategorieController@update']);
-
-//produit routes
-//
-//Route::get('produit/',['as'=>'produit.index','uses'=>'ProduitController@index'] );
-//Route::get('produit/add',['as'=>'produit.add','uses'=>'ProduitController@create'] );
-//Route::post('produit/create',['as'=>'produit.create','uses'=>'ProduitController@store'] );
-//Route::get('produit/delete/{id_produit}/{id_caisse}',['as'=>'produit.delete','uses'=>'ProduitController@destroy'] );
-//Route::get('produit/edit/{id_produit}/{id_caisse}',['as'=>'produit.edit','uses'=>'ProduitController@edit'] );
-//Route::put('produit/update/{id_produit}',['as'=>'produit.update','uses'=>'ProduitController@update']);
-
+Route::get('cat/delete/{id_categorie}',['as'=>'cat.delete','uses'=>'CategorieController@destroy'] );
+Route::get('cat/edit/{id_categorie}',['as'=>'cat.edit','uses'=>'CategorieController@edit'] );
+Route::put('cat/update/{id_categorie}',['as'=>'cat.update','uses'=>'CategorieController@update']);
 
 //Client routes
 
@@ -50,8 +40,11 @@ Route::get('clients/edit/{id_client}',['as'=>'client.edit','uses'=>'ClientContro
 Route::put('clients/update/{id_client}',['as'=>'client.update','uses'=>'ClientController@update']);
 
 //Client routes
+Route::get('/stockes',['as'=>'stockes','uses'=>'HomeController@stockes']);
+Route::get('/shop',['as'=>'shop','uses'=>'HomeController@shop']);
+Route::get('/sales',['as'=>'sales','uses'=>'HomeController@sales'] );
+Route::get('/',['as'=>'sales','uses'=>'HomeController@sales'] );
 
-Route::get('/sales',['as'=>'sales','uses'=>'ProduitController@ventes'] );
 
 //Produit routes
 
@@ -61,6 +54,12 @@ Route::post('produit/create',['as'=>'produit.create','uses'=>'ProduitController@
 Route::get('produit/delete/{id_produit}',['as'=>'produit.delete','uses'=>'ProduitController@destroy'] );
 Route::get('produit/edit/{id_produit}',['as'=>'produit.edit','uses'=>'ProduitController@edit'] );
 Route::put('produit/update/{id_produit}',['as'=>'produit.update','uses'=>'ProduitController@update']);
+
+//prix routes
+
+Route::post('prix/create',['as'=>'prix.create','uses'=>'PrixController@store'] );
+
+
 
 
 Route::controllers([

@@ -35,14 +35,14 @@ class LoginController extends Controller {
        // dd(Session::all());
 	    $account = $this->getUserByLogin($inputs['login']);
             if($account==null){
-                return Redirect::back()->withErrors(['ce compte n\'existe pas veuillez réssayer ou créer un nouveau compte']);
+                return Redirect::back()->with(['emailError'=>'ce compte n\'existe pas veuillez réssayer ou créer un nouveau compte']);
             }else{
                 if(sha1($inputs['mdp'])==$account->mdp){
                     Session::put('userToken',md5($account->id_account_caisse));
                     Session::put('client',$account);
                     return redirect('caisses');
                 }else{
-                    return Redirect::back()->withErrors(['votre mot de passe n\'est pas correcte veuillez réssayer!!']);
+                    return Redirect::back()->with(['passError'=>'votre mot de passe n\'est pas correcte veuillez réssayer!!']);
 
 
                 }

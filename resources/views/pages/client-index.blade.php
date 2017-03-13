@@ -24,6 +24,15 @@
                                 <strong>Well done!</strong>{{ Session::get('success') }}.
                             </div>
                         @endif
+                        @if(Session::has('error'))
+
+                            <div class="alert bg-danger alert-icon-left alert-dismissible fade in mb-2" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <strong>Well done!</strong>{{ Session::get('error') }}.
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <div class="embed-responsive embed-responsive-item embed-responsive-4by3">

@@ -25,6 +25,15 @@
                                 <strong>Well done!</strong>{{ Session::get('success') }}.
                             </div>
                         @endif
+                        @if(Session::has('error'))
+
+                            <div class="alert bg-danger alert-icon-left alert-dismissible fade in mb-2" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <strong>Well done!</strong>{{ Session::get('error') }}.
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <div class="embed-responsive embed-responsive-item embed-responsive-4by3">
@@ -45,7 +54,7 @@
                                 <tr  role="row" class="odd">
                                     <td class="sorting_1">
                                         <span class="avatar avatar-online">
-                                                <img src="{{  asset('/images/produit').'/'.$produit->image_produit}}" >
+                                                <img src="{{  asset('/images/produit').'/'.$produit->image}}" >
                                             {{$produit->designation}}
                                             </span>
 
@@ -65,9 +74,10 @@
 
                                     <td>{{\App\Categorie::where('id_categorie',$produit->id_cat)->get()->first()['attributes']['designation_cat']}}</td>
                                     <td>0,00 €</td>
-                                    <td width="20%">
+                                    <td width="30%">
                                         <a  class="btn btn-sm btn-danger"  onclick="deleteProduit({{$produit->id_produit}})">supprimer</a>
                                         <a  class="btn btn-sm btn-primary" href="{{route('produit.edit',[$produit->id_produit])}}">editer</a>
+                                        <a  class="btn btn-sm btn-warning" onclick="setId({{$produit->id_produit}})">ajouter un prix</a>
                                     </td>
 
 
@@ -92,6 +102,7 @@
     </div>
 
     @include('partials.modals.produit-form-modal')
+    @include('partials.modals.prix-form-modal')
 
 @endsection
 
@@ -99,7 +110,15 @@
     <script src="{{ asset('/validator/dist/jquery.validate.js') }}" type="text/javascript"></script>
     <script>
 
-        $('#addProduit').validate();
+ function setId(id) {
+     $("input[name='idproduit']").val(id);
+     $('#prix').modal('show');
+ }
+        $('form').each(function() {
+            $(this).validate();
+
+        });
+
 
         function deleteProduit(id) {
             let r = confirm("voulez vous continuez cette operation ?");

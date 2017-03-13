@@ -51,7 +51,7 @@
 
                         <fieldset class="form-group floating-label-form-group col-md-6">
                             {!! Form::label('id_cat','categorie') !!}
-                            {!! Form::select('id_cat',App\Categorie::where('visible',1)->lists('designation_cat','id_categorie'),null,['class'=>'form-control','required'=>true]) !!}
+                            {!! Form::select('id_cat',App\Categorie::where('visible',1)->where('id_caisse',\Illuminate\Support\Facades\Session::get('id'))->lists('designation_cat','id_categorie'),null,['class'=>'form-control','required'=>true]) !!}
 
                         </fieldset>
                     </div>
@@ -94,28 +94,4 @@
 </div>
 
 
-<div id="formtoadd" class="sr-only">
-    <hr>
-    <h1>Ajouter un  prix</h1>
-    <hr>
-    <fieldset class="form-group floating-label-form-group">
-        {!! Form::label('prix','prix') !!}
-        {!! Form::number('prix',null,['class'=>'form-control border-primary','placeholder'=>'prix']) !!}
-    </fieldset>
-
-    <fieldset class="form-group floating-label-form-group">
-        {!! Form::label('tva','tva') !!}
-        {!! Form::number('tva',null,['class'=>'form-control border-primary','placeholder'=>'tva']) !!}
-    </fieldset>
-    <fieldset class="form-group floating-label-form-group">
-        {!! Form::label('label','label') !!}
-        {!! Form::text('label',null,['class'=>'form-control border-primary','placeholder'=>'label']) !!}
-    </fieldset>
-    <fieldset class="form-group floating-label-form-group">
-        {!! Form::label('code_bar','code bar') !!}
-        {!! Form::text('code_bar',null,['class'=>'form-control border-primary','placeholder'=>'label']) !!}
-    </fieldset>
-
-
-</div>
 

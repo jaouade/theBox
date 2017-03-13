@@ -22,7 +22,7 @@ class ProduitController extends Controller {
 	public function index()
 	{
         $produit = new Produit();
-        $produits= Produit::where('visible',1)->get()->all();
+        $produits= Produit::where('visible',1)->where('id_caisse',Session::get('id'))->get()->all();
         return view('pages.produit-index',compact('produit','produits'));
 	}
 
@@ -104,9 +104,14 @@ class ProduitController extends Controller {
 	{
 	    $id_caisse = Session::get('id');
 	    $produit = Produit::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->get()->first();
-	    $prix = Prix::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->get()->first();
+	    if($produit==null){
+	        Redirect::route('produit.index')->with(['error'=>'nous n\'avons pas pu faire l\'operation ']);
+        }else {
 
-	    return view('pages.update-produit',compact('produit','prix'));
+            $prices = Prix::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->get()->all();
+
+            return view('pages.update-produit',compact('produit','prices'));
+        }
 
 	}
 
@@ -122,7 +127,8 @@ class ProduitController extends Controller {
 	    $id_caisse = Session::get('id');
 	    $last_update = Carbon::now();
 	    $inputs = $request->only(['designation', 'description', 'color','id_cat']);
-        $prix_inputs = $request->only(['tva','label','prix','code_bar']);
+        $prix_inputs = $request->only(['tva','label','prix','code_bar','id_prix']);
+        $incr = count($prix_inputs['tva']);
         if($request->file('image')!=null){
             $imageName =md5(uniqid(rand(), true)).'.' . $request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(base_path() . '/public/images/produit/', $imageName);
@@ -131,10 +137,16 @@ class ProduitController extends Controller {
         $inputs['last_update'] = $last_update->toDateString();
         $inputs['visible'] = 1;
         Produit::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->update($inputs);
-        //pix inputs
-        $prix_inputs['etat'] =1;
-        $prix_inputs['last_update'] = $last_update->toDateString();
-        Prix::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->update($prix_inputs);
+
+        for($i=0;$i<$incr;$i++){
+            $prix['last_update'] = $last_update->toDateString();
+            $prix['tva']=$prix_inputs['tva'][$i];
+            $prix['prix']=$prix_inputs['prix'][$i];
+            $prix['label']=$prix_inputs['label'][$i];
+            $prix['code_bar']=$prix_inputs['code_bar'][$i];
+            Prix::where('id_prix',$prix_inputs['id_prix'][$i])->where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->update($prix);
+        }
+
         return Redirect::route('produit.index')->with(['success'=>'les modifications ont été enregistrés avec succé']);
 
 	}
@@ -154,7 +166,7 @@ class ProduitController extends Controller {
         $inputs['visible'] = 2;
         Produit::where('id_produit',$id_produit)->where('id_caisse',$id_caisse)->update($inputs);
 
-        return Redirect::route('produit.index');
+        return Redirect::route('produit.index')->with(['success'=>'les produit a bien été supprimé ']);
 
 	}
 
